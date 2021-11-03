@@ -2,7 +2,7 @@
 #include "Global.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
-
+#include "Components/CStatusComponet.h"
 ACPlayer::ACPlayer()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -11,9 +11,16 @@ ACPlayer::ACPlayer()
 	CHelpers::CreateComponent(this, &SpringArm, "SpringArm", GetMesh());
 	CHelpers::CreateComponent(this, &Camera, "Camera", SpringArm);
 
+	//Create ActorComponent
+	CHelpers::CreateActorComponent(this, &Status, "Status");
+
 	//Component Settings
 	GetMesh()->SetRelativeLocation(FVector(0, 0, -88));
 	GetMesh()->SetRelativeRotation(FRotator(0, -90, 0));
+
+	TSubclassOf<UAnimInstance> animInstance;
+	CHelpers::GetClass<UAnimInstance>(&animInstance, "AnimBlueprint'/Game/Player/ABP_CPlayer.ABP_CPlayer_C'");
+	GetMesh()->SetAnimInstanceClass(animInstance);
 
 	USkeletalMesh* mesh;
 	CHelpers::GetAsset<USkeletalMesh>(&mesh, "SkeletalMesh'/Game/Character/Mesh/SK_Mannequin.SK_Mannequin'");

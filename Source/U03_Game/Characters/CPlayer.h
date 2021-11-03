@@ -16,6 +16,9 @@ private: //Scene
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCameraComponent* Camera;
 
+private: //ActorComp
+	UPROPERTY(VisibleDefaultsOnly)
+		class UCStatusComponet* Status;
 public:
 	ACPlayer();
 
