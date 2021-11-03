@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\U03_Game.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{DF3BAF7B-2A28-4F83-AF62-1582FCF532E9}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\U03_Game.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\U03_GameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\README.md" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{517894B1-F426-4A24-8071-9B27FA4E7113}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\U03_Game">
+      <UniqueIdentifier>{84B99942-9713-456E-9810-CCAA07DF80BD}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\U03_Game\U03_Game.Build.cs">
+      <Filter>Source\U03_Game</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\U03_Game\U03_Game.cpp">
+      <Filter>Source\U03_Game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\U03_Game.h">
+      <Filter>Source\U03_Game</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\U03_GameGameModeBase.cpp">
+      <Filter>Source\U03_Game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\U03_GameGameModeBase.h">
+      <Filter>Source\U03_Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
