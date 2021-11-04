@@ -95,8 +95,6 @@ void ACPlayer::OnHorizontaLook(float InAxis)
 {
 	float rate = Option->GetHorizontalLookRate();
 
-	//CLog::Print(FString("Forward"));
-
 	AddControllerYawInput(InAxis*rate*GetWorld()->GetDeltaSeconds());
 }
 
