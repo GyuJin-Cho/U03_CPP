@@ -24,7 +24,7 @@ public:
 	FORCEINLINE float GetWalkSpeed() { return WalkSpeed; }
 	FORCEINLINE float GetRunSpeed() { return RunSpeed; }
 	FORCEINLINE float GetSprintSpeed() { return SprintSpeed; }
-	FORCEINLINE float GetCanMove() { return bCanMove; }
+	FORCEINLINE float CanMove() { return bCanMove; }
 public:	
 	UCStatusComponet();
 

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\U03_Game.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9BA27F0D-4267-4D8E-A393-8285CCE57C9B}</UniqueIdentifier>
+      <UniqueIdentifier>{7C806569-651F-4D7B-BB6A-DF15604C8290}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\U03_Game.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{E6A3DB64-DAB3-4413-997B-B9DB9DF413D1}</UniqueIdentifier>
+      <UniqueIdentifier>{4E793CAD-7864-4CAB-B606-14CD98F9EC98}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\U03_Game">
-      <UniqueIdentifier>{584D7447-9915-4767-A3F0-868EB9F77246}</UniqueIdentifier>
+      <UniqueIdentifier>{ECE30EDC-EDDF-4DB4-8240-E29B03DACCF0}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\U03_Game\CGameMode.cpp">
       <Filter>Source\U03_Game</Filter>
@@ -51,7 +51,7 @@
       <Filter>Source\U03_Game</Filter>
     </ClInclude>
     <Filter Include="Source\U03_Game\Characters">
-      <UniqueIdentifier>{651B4912-9D89-4906-934A-DAC04E9DE020}</UniqueIdentifier>
+      <UniqueIdentifier>{4644C436-33EF-4E3E-906A-6F967238BCAB}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\U03_Game\Characters\CAnimInstance.cpp">
       <Filter>Source\U03_Game\Characters</Filter>
@@ -66,8 +66,26 @@
       <Filter>Source\U03_Game\Characters</Filter>
     </ClInclude>
     <Filter Include="Source\U03_Game\Components">
-      <UniqueIdentifier>{49223372-79D5-4BD7-9B05-D37A8941E81D}</UniqueIdentifier>
+      <UniqueIdentifier>{0B30BB9E-18DB-4E42-982E-30EA12A09612}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CMontagesComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CMontagesComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\COptionComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\COptionComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CStateComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CStateComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\U03_Game\Components\CStatusComponet.cpp">
       <Filter>Source\U03_Game\Components</Filter>
     </ClCompile>
@@ -75,7 +93,7 @@
       <Filter>Source\U03_Game\Components</Filter>
     </ClInclude>
     <Filter Include="Source\U03_Game\Utilities">
-      <UniqueIdentifier>{1C860ECB-57EC-4DDC-AA27-D9E03E712EBE}</UniqueIdentifier>
+      <UniqueIdentifier>{5C1FA955-ABFC-48B9-985F-371F1F5C4E46}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\U03_Game\Utilities\CHelpers.h">
       <Filter>Source\U03_Game\Utilities</Filter>

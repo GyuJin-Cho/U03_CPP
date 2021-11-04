@@ -3,6 +3,10 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CStatusComponet.h"
+#include "Components/COptionComponent.h"
+#include "Components/CStateComponent.h"
+#include "Components/CMontagesComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 ACPlayer::ACPlayer()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -13,6 +17,9 @@ ACPlayer::ACPlayer()
 
 	//Create ActorComponent
 	CHelpers::CreateActorComponent(this, &Status, "Status");
+	CHelpers::CreateActorComponent(this, &Option, "Option");
+	CHelpers::CreateActorComponent(this, &State, "State");
+	CHelpers::CreateActorComponent(this, &Montage, "Montage");
 
 	//Component Settings
 	GetMesh()->SetRelativeLocation(FVector(0, 0, -88));
@@ -34,6 +41,9 @@ ACPlayer::ACPlayer()
 	SpringArm->bDoCollisionTest = false;
 	SpringArm->bUsePawnControlRotation = true;
 	
+	GetCharacterMovement()->MaxWalkSpeed = Status->GetSprintSpeed();
+	GetCharacterMovement()->RotationRate = FRotator(0, 720, 0);
+	GetCharacterMovement()->bOrientRotationToMovement = true;
 }
 
 void ACPlayer::BeginPlay()
@@ -52,29 +62,48 @@ void ACPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis("MoveForwad", this, &ACPlayer::OnMoveForward);
+	PlayerInputComponent->BindAxis("MoveForward", this, &ACPlayer::OnMoveForward);
 	PlayerInputComponent->BindAxis("MoveRight", this, &ACPlayer::OnMoveRight);
-	PlayerInputComponent->BindAxis("HorizontaLook", this, &ACPlayer::OnHorizontaLook);
+	PlayerInputComponent->BindAxis("HorizontalLook", this, &ACPlayer::OnHorizontaLook);
 	PlayerInputComponent->BindAxis("VerticalLook", this, &ACPlayer::OnVerticalLook);
 }
 
 void ACPlayer::OnMoveForward(float InAxis)
 {
 
+	if (!Status->CanMove())
+		return;
+
+	FRotator rotator = FRotator(0, GetControlRotation().Yaw, 0);
+	FVector direction = FQuat(rotator).GetForwardVector();
+
+	AddMovementInput(direction, InAxis);
 }
 
 void ACPlayer::OnMoveRight(float InAxis)
 {
+	if (!Status->CanMove())
+		return;
 
+	FRotator rotator = FRotator(0, GetControlRotation().Yaw, 0);
+	FVector direction = FQuat(rotator).GetRightVector();
+
+	AddMovementInput(direction, InAxis);
 }
 
 void ACPlayer::OnHorizontaLook(float InAxis)
 {
+	float rate = Option->GetHorizontalLookRate();
 
+	//CLog::Print(FString("Forward"));
+
+	AddControllerYawInput(InAxis*rate*GetWorld()->GetDeltaSeconds());
 }
 
 void ACPlayer::OnVerticalLook(float InAxis)
 {
+	float rate = Option->GetVerticalLookRate();
 
+	AddControllerPitchInput(InAxis * rate * GetWorld()->GetDeltaSeconds());
 }
 
