@@ -1,12 +1,12 @@
 #include "CMontagesComponent.h"
 #include "Global.h"
 #include "GameFramework/Character.h"
-#define NotCompile
 
 UCMontagesComponent::UCMontagesComponent()
 {
 
 }
+
 
 void UCMontagesComponent::BeginPlay()
 {
@@ -29,23 +29,27 @@ void UCMontagesComponent::BeginPlay()
 
 }
 
+
 void UCMontagesComponent::PlayAnimMontage(EStateType InStateType)
 {
-
-	ACharacter* character=Cast<ACharacter>(GetOwner());
+	ACharacter* character = Cast<ACharacter>(GetOwner());
 
 	const FMontageData* data = Datas[(int32)InStateType];
 	if (!!data)
 	{
 		if (!!data->AnimMontage)
-		{
 			character->PlayAnimMontage(data->AnimMontage, data->PlayRate, data->StartSection);
-		}
 	}
 
-#ifdef NotCompile
 
+}
 
+void UCMontagesComponent::PlayRoll()
+{
+	PlayAnimMontage(EStateType::Roll);
+}
 
-#endif
+void UCMontagesComponent::PlayBackStep()
+{
+	PlayAnimMontage(EStateType::BackStep);
 }
