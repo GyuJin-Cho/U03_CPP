@@ -16,6 +16,7 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		float VerticalLookRate = 45.0f;
+
 public:	
 	UCOptionComponent();
 
@@ -24,5 +25,7 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+
+
 		
 };

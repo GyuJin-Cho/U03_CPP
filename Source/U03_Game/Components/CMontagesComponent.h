@@ -28,7 +28,7 @@ public:
 		bool bCanMove;
 };
 
-UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class U03_GAME_API UCMontagesComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -37,7 +37,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "DataTable")
 		UDataTable* DataTable;
 
-public:
+public:	
 	UCMontagesComponent();
 
 	void PlayRoll();

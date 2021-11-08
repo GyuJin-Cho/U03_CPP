@@ -12,7 +12,7 @@ void UCAnimInstance::NativeBeginPlay()
 	UCActionComponent* action = CHelpers::GetComponent<UCActionComponent>(character);
 	CheckNull(action);
 
-	action->OnActionTypeChanged.AddDynamic(this, &UCAnimInstance::OnActionTypeChanged);
+	action->OnActionTypeChanged.AddDynamic(this, &UCAnimInstance::OnActionTypeChaged);
 }
 
 void UCAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -26,8 +26,7 @@ void UCAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	Direction = CalculateDirection(character->GetVelocity(), character->GetControlRotation());
 }
 
-void UCAnimInstance::OnActionTypeChanged(EActionType InPrevType, EActionType InNewType)
+void UCAnimInstance::OnActionTypeChaged(EActionType InPrevType, EActionType InNewType)
 {
 	ActionType = InNewType;
-
 }

@@ -1,13 +1,17 @@
 #include "CStateComponent.h"
 #include "Global.h"
+
 UCStateComponent::UCStateComponent()
 {
 
 }
 
+
 void UCStateComponent::BeginPlay()
 {
 	Super::BeginPlay();
+
+	
 }
 
 void UCStateComponent::SetIdleMode()
@@ -25,11 +29,16 @@ void UCStateComponent::SetBackStepMode()
 	ChangeType(EStateType::BackStep);
 }
 
+void UCStateComponent::SetEquipMode()
+{
+	ChangeType(EStateType::Equip);
+}
+
 void UCStateComponent::ChangeType(EStateType InNewType)
 {
 	EStateType prev = Type;
 	Type = InNewType;
 
 	if (OnStateTypeChanged.IsBound())
-		OnStateTypeChanged.Broadcast(prev,InNewType);
+		OnStateTypeChanged.Broadcast(prev, InNewType);
 }

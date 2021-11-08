@@ -19,7 +19,7 @@ private: //SceneComp
 
 private: //ActorComp
 	UPROPERTY(VisibleDefaultsOnly)
-		class UCStatusComponet* Status;
+		class UCStatusComponent* Status;
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCOptionComponent* Option;
@@ -32,13 +32,14 @@ private: //ActorComp
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCActionComponent* Action;
+
 public:
 	ACPlayer();
 
 protected:
 	virtual void BeginPlay() override;
 
-public:
+public:	
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
@@ -62,6 +63,12 @@ private:
 public:
 	void End_BackStep();
 	void End_Roll();
+
+
+private:
+	void OnFist();
+	void OnOneHand();
+	void OnTwoHand();
 
 private:
 	UFUNCTION()

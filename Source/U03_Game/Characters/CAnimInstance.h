@@ -9,7 +9,7 @@ UCLASS()
 class U03_GAME_API UCAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
-	
+
 protected:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 		float Speed;
@@ -19,11 +19,12 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 		EActionType ActionType;
+
 public:
 	virtual void NativeBeginPlay() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 private:
 	UFUNCTION()
-		void OnActionTypeChanged(EActionType InPrevType, EActionType InNewType);
+		void OnActionTypeChaged(EActionType InPrevType, EActionType InNewType);
 };

@@ -8,7 +8,8 @@ UCLASS()
 class U03_GAME_API ACGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
 public:
 	ACGameMode();
+	
 };
