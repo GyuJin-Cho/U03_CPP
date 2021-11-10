@@ -3,6 +3,7 @@
 #include "GameFramework/Character.h"
 #include "CEquipment.h"
 #include "CAttachMent.h"
+#include "CDoAction.h"
 
 void UCActionData::BeginPlay(class ACharacter* InOwnerCharacter)
 {
@@ -28,9 +29,18 @@ void UCActionData::BeginPlay(class ACharacter* InOwnerCharacter)
 	if (!!AttachmentClass)
 	{
 		Equipment->OnEquipmentDelegate.AddDynamic(Attachment, &ACAttachMent::OnEquip);
-		Equipment->OnUnequipmentDelegate.AddDynamic(Attachment, &ACAttachMent::OnEquip);
+		Equipment->OnUnequipmentDelegate.AddDynamic(Attachment, &ACAttachMent::OnUnEquip);
 	}
 
+
+	if (!!DoActionClass)
+	{
+		DoAction = InOwnerCharacter->GetWorld()->SpawnActorDeferred<ACDoAction>(DoActionClass, transform, InOwnerCharacter);
+		DoAction->AttachToComponent(InOwnerCharacter->GetMesh(), FAttachmentTransformRules(EAttachmentRule::KeepRelative, true));
+		DoAction->SetData(DoActionDatas);
+		DoAction->SetActorLabel(GetLableName(InOwnerCharacter, "DoAction"));
+		UGameplayStatics::FinishSpawningActor(DoAction, transform);
+	}
 
 }
 
