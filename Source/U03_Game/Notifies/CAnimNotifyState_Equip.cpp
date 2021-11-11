@@ -13,17 +13,17 @@ void UCAnimNotifyState_Equip::NotifyBegin(USkeletalMeshComponent* MeshComp, UAni
 	Super::NotifyBegin(MeshComp, Animation, TotalDuration);
 	CheckNull(MeshComp);
 	CheckNull(MeshComp->GetOwner());
-	
+
 	UCActionComponent* action = CHelpers::GetComponent<UCActionComponent>(MeshComp->GetOwner());
 	CheckNull(action);
-
+	
 	action->GetCurrent()->GetEquipment()->Begin_Equip();
+
 }
 
 void UCAnimNotifyState_Equip::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
 {
 	Super::NotifyEnd(MeshComp, Animation);
-
 	CheckNull(MeshComp);
 	CheckNull(MeshComp->GetOwner());
 

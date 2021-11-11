@@ -1,6 +1,6 @@
 #include "CActionComponent.h"
 #include "Global.h"
-#include "GameFramework/Character.h" 
+#include "GameFramework/Character.h"
 #include "Actions/CActionData.h"
 #include "Actions/CEquipment.h"
 #include "Actions/CDoAction.h"
@@ -23,12 +23,10 @@ void UCActionComponent::BeginPlay()
 	}
 }
 
-void UCActionComponent::SetUnamredMode()
+void UCActionComponent::SetUnarmedMode()
 {
 	if (!!Datas[(int32)Type])
-	{
 		Datas[(int32)Type]->GetEquipment()->Unequip();
-	}
 
 	Datas[(int32)EActionType::Unarmed]->GetEquipment()->Equip();
 
@@ -65,11 +63,12 @@ void UCActionComponent::SetMagicBallMode()
 	SetMode(EActionType::MagicBall);
 }
 
+
 void UCActionComponent::SetMode(EActionType InType)
 {
 	if (Type == InType)
 	{
-		SetUnamredMode();
+		SetUnarmedMode();
 
 		return;
 	}
@@ -95,15 +94,17 @@ void UCActionComponent::ChangeType(EActionType InNewType)
 		OnActionTypeChanged.Broadcast(prevType, Type);
 }
 
+
+
 void UCActionComponent::DoAction()
 {
 	CheckTrue(IsUnarmedMode());
+
 	if (!!Datas[(int32)Type])
 	{
 		ACDoAction* action = Datas[(int32)Type]->GetDoAction();
 
-		if(!!action)
+		if (!!action)
 			action->DoAction();
 	}
-
 }

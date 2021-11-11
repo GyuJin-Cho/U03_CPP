@@ -3,6 +3,7 @@
 #include "Components/CActionComponent.h"
 #include "Actions/CActionData.h"
 #include "Actions/CDoAction.h"
+
 FString UCAnimNotify_EndAction::GetNotifyName_Implementation() const
 {
 	return "EndAction";
@@ -10,7 +11,6 @@ FString UCAnimNotify_EndAction::GetNotifyName_Implementation() const
 
 void UCAnimNotify_EndAction::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
 {
-	
 	Super::Notify(MeshComp, Animation);
 	CheckNull(MeshComp);
 	CheckNull(MeshComp->GetOwner());

@@ -26,7 +26,6 @@ ACPlayer::ACPlayer()
 	CHelpers::CreateActorComponent(this, &Option, "Option");
 	CHelpers::CreateActorComponent(this, &State, "State");
 
-
 	//Component Settings
 	GetMesh()->SetRelativeLocation(FVector(0, 0, -88));
 	GetMesh()->SetRelativeRotation(FRotator(0, -90, 0));
@@ -58,17 +57,19 @@ void ACPlayer::BeginPlay()
 	Super::BeginPlay();
 
 	UMaterialInstanceConstant* body, *logo;
-	CHelpers::GetAssetDynamic<UMaterialInstanceConstant>(&body, "MaterialInstanceConstant'/Game/Matarial/M_UE4Man_Body_Inst.M_UE4Man_Body_Inst'");
-	CHelpers::GetAssetDynamic<UMaterialInstanceConstant>(&logo, "MaterialInstanceConstant'/Game/Matarial/M_UE4Man_ChestLogo_Inst.M_UE4Man_ChestLogo_Inst'");
+	CHelpers::GetAssetDynamic<UMaterialInstanceConstant>(&body, "MaterialInstanceConstant'/Game/Materials/M_UE4Man_Body_Inst.M_UE4Man_Body_Inst'");
+	CHelpers::GetAssetDynamic<UMaterialInstanceConstant>(&logo, "MaterialInstanceConstant'/Game/Materials/M_UE4Man_ChestLogo_Inst.M_UE4Man_ChestLogo_Inst'");
+
 	BodyMaterial = UMaterialInstanceDynamic::Create(body, this);
 	LogoMaterial = UMaterialInstanceDynamic::Create(logo, this);
 
 	GetMesh()->SetMaterial(0, BodyMaterial);
 	GetMesh()->SetMaterial(1, LogoMaterial);
 
+
 	State->OnStateTypeChanged.AddDynamic(this, &ACPlayer::OnStateTypeChanged);
 
-	Action->SetUnamredMode();
+	Action->SetUnarmedMode();
 }
 
 void ACPlayer::Tick(float DeltaTime)
@@ -194,6 +195,8 @@ void ACPlayer::End_Roll()
 		bUseControllerRotationYaw = true;
 		GetCharacterMovement()->bOrientRotationToMovement = false;
 	}
+
+
 	State->SetIdleMode();
 }
 
@@ -223,6 +226,8 @@ void ACPlayer::OnDoAction()
 	Action->DoAction();
 }
 
+
+
 void ACPlayer::OnStateTypeChanged(EStateType InPrevType, EStateType InNewType)
 {
 	switch (InNewType)
@@ -237,4 +242,3 @@ void ACPlayer::ChangeColor(FLinearColor InColor)
 	BodyMaterial->SetVectorParameterValue("BodyColor", InColor);
 	LogoMaterial->SetVectorParameterValue("BodyColor", InColor);
 }
-

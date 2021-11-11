@@ -10,7 +10,6 @@ struct FEquipmentData
 	GENERATED_BODY()
 
 public:
-
 	UPROPERTY(EditAnywhere)
 		class UAnimMontage* AnimMontage;
 	
@@ -50,24 +49,26 @@ public:
 		TSubclassOf<class UCameraShake> ShakeClass;
 };
 
+
 UCLASS()
 class U03_GAME_API UCActionData : public UDataAsset
 {
 	GENERATED_BODY()
 
 public:
-	FORCEINLINE class ACEquipment* GetEquipment() { return Equipment; };
-	FORCEINLINE class ACDoAction* GetDoAction() { return DoAction; };
+	FORCEINLINE class ACAttachment* GetAttachment() { return Attachment; }
+	FORCEINLINE class ACEquipment* GetEquipment() { return Equipment; }
+	FORCEINLINE class ACDoAction* GetDoAction() { return DoAction; }
 
 public:
 	void BeginPlay(class ACharacter* InOwnerCharacter);
 
 private:
-	FString GetLableName(class ACharacter* InOwnerCharacter, FString InName);
+	FString GetLabelName(class ACharacter* InOwnerCharacter, FString InName);
 
 public:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
-		TSubclassOf<class ACAttachMent> AttachmentClass;
+		TSubclassOf<class ACAttachment> AttachmentClass;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 		TSubclassOf<class ACEquipment> EquipmentClass;
@@ -84,8 +85,9 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 		TArray<FDoActionData> DoActionDatas;
 
+
 private:
 	class ACEquipment* Equipment;
-	class ACAttachMent* Attachment;
+	class ACAttachment* Attachment;
 	class ACDoAction* DoAction;
 };

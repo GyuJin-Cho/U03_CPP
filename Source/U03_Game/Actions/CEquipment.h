@@ -6,7 +6,6 @@
 #include "CEquipment.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FEquipmentDelegate);
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FUnequipmentDelegate);
 
 UCLASS()
@@ -27,9 +26,10 @@ protected:
 public:
 	UPROPERTY(BlueprintAssignable)
 		FEquipmentDelegate OnEquipmentDelegate;
-
+	
 	UPROPERTY(BlueprintAssignable)
 		FUnequipmentDelegate OnUnequipmentDelegate;
+
 public:
 	UFUNCTION(BlueprintNativeEvent)
 		void Equip();

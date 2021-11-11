@@ -3,6 +3,7 @@
 #include "Components/CActionComponent.h"
 #include "Actions/CActionData.h"
 #include "Actions/CDoAction.h"
+
 FString UCAnimNotify_BeginAction::GetNotifyName_Implementation() const
 {
 	return "BeginAction";

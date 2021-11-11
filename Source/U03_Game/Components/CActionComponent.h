@@ -49,7 +49,7 @@ public:
 public:
 	UCActionComponent();
 
-	void SetUnamredMode();
+	void SetUnarmedMode();
 	void SetFistMode();
 	void SetOneHandMode();
 	void SetTwoHandMode();

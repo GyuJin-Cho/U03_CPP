@@ -2,7 +2,7 @@
 #include "Global.h"
 #include "GameFramework/Character.h"
 #include "CEquipment.h"
-#include "CAttachMent.h"
+#include "CAttachment.h"
 #include "CDoAction.h"
 
 void UCActionData::BeginPlay(class ACharacter* InOwnerCharacter)
@@ -11,8 +11,8 @@ void UCActionData::BeginPlay(class ACharacter* InOwnerCharacter)
 
 	if (!!AttachmentClass)
 	{
-		Attachment = InOwnerCharacter->GetWorld()->SpawnActorDeferred<ACAttachMent>(AttachmentClass, transform, InOwnerCharacter);
-		Attachment->SetActorLabel(GetLableName(InOwnerCharacter,"Attachment"));
+		Attachment = InOwnerCharacter->GetWorld()->SpawnActorDeferred<ACAttachment>(AttachmentClass, transform, InOwnerCharacter);
+		Attachment->SetActorLabel(GetLabelName(InOwnerCharacter, "Attachment"));
 		UGameplayStatics::FinishSpawningActor(Attachment, transform);
 	}
 
@@ -22,14 +22,14 @@ void UCActionData::BeginPlay(class ACharacter* InOwnerCharacter)
 		Equipment->AttachToComponent(InOwnerCharacter->GetMesh(), FAttachmentTransformRules(EAttachmentRule::KeepRelative, true));
 		Equipment->SetData(EquipmentData);
 		Equipment->SetColor(EquipmentColor);
-		Equipment->SetActorLabel(GetLableName(InOwnerCharacter,"Equipment"));
+		Equipment->SetActorLabel(GetLabelName(InOwnerCharacter, "Equipment"));
 		UGameplayStatics::FinishSpawningActor(Equipment, transform);
-	}
 
-	if (!!AttachmentClass)
-	{
-		Equipment->OnEquipmentDelegate.AddDynamic(Attachment, &ACAttachMent::OnEquip);
-		Equipment->OnUnequipmentDelegate.AddDynamic(Attachment, &ACAttachMent::OnUnEquip);
+		if (!!AttachmentClass)
+		{
+			Equipment->OnEquipmentDelegate.AddDynamic(Attachment, &ACAttachment::OnEquip);
+			Equipment->OnUnequipmentDelegate.AddDynamic(Attachment, &ACAttachment::OnUnequip);
+		}
 	}
 
 
@@ -38,20 +38,26 @@ void UCActionData::BeginPlay(class ACharacter* InOwnerCharacter)
 		DoAction = InOwnerCharacter->GetWorld()->SpawnActorDeferred<ACDoAction>(DoActionClass, transform, InOwnerCharacter);
 		DoAction->AttachToComponent(InOwnerCharacter->GetMesh(), FAttachmentTransformRules(EAttachmentRule::KeepRelative, true));
 		DoAction->SetData(DoActionDatas);
-		DoAction->SetActorLabel(GetLableName(InOwnerCharacter, "DoAction"));
+		DoAction->SetActorLabel(GetLabelName(InOwnerCharacter, "DoAction"));
 		UGameplayStatics::FinishSpawningActor(DoAction, transform);
+
+		if (!!Attachment)
+		{
+			Attachment->OnAttachmentBeginOverlap.AddDynamic(DoAction, &ACDoAction::OnAttachmentBeginOverlap);
+			Attachment->OnAttachmentEndOverlap.AddDynamic(DoAction, &ACDoAction::OnAttachmentEndOverlap);
+		}
 	}
 
 }
 
-FString UCActionData::GetLableName(ACharacter* InOwnerCharacter, FString InName)
+FString UCActionData::GetLabelName(ACharacter* InOwnerCharacter, FString InName)
 {
 	FString name;
 	name.Append(InOwnerCharacter->GetActorLabel());
 	name.Append("_");
 	name.Append(InName);
 	name.Append("_");
-	name.Append(GetName().Replace(L"DA_",L""));
+	name.Append(GetName().Replace(L"DA_", L""));
 
 	return name;
 }

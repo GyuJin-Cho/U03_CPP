@@ -39,7 +39,7 @@ void ACEquipment::Equip_Implementation()
 		OwnerCharacter->GetCharacterMovement()->bOrientRotationToMovement = false;
 	}
 
-	IICharacter* character =Cast<IICharacter>(OwnerCharacter);
+	IICharacter* character = Cast<IICharacter>(OwnerCharacter);
 	CheckNull(character);
 	character->ChangeColor(Color);
 }
