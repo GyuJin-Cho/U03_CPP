@@ -115,7 +115,10 @@ void ACEnemy::Hitted()
 
 void ACEnemy::Dead()
 {
-	
+	CheckFalse(State->IsDeadMode());
+	Montages->PlayDead();
+
+
 }
 
 void ACEnemy::ChangeColor(FLinearColor InColor)

@@ -4,6 +4,7 @@
 #include "Actions/CActionData.h"
 #include "Actions/CEquipment.h"
 #include "Actions/CDoAction.h"
+#include "Actions/CAttachment.h"
 
 UCActionComponent::UCActionComponent()
 {
@@ -61,6 +62,19 @@ void UCActionComponent::SetTornadoMode()
 void UCActionComponent::SetMagicBallMode()
 {
 	SetMode(EActionType::MagicBall);
+}
+
+void UCActionComponent::OffAllCollision()
+{
+	for (UCActionData* data : Datas)
+	{
+		if (!!data == false)
+			continue;
+		if (!!data->GetAttachment() == false)
+			continue;
+
+		data->GetAttachment()->OffCollision();
+	}
 }
 
 
