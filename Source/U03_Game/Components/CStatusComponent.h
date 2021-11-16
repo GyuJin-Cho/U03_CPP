@@ -41,6 +41,7 @@ public:
 
 	void AddHealth(float InAmount);
 	void SubHealth(float InAmount);
+
 protected:
 	virtual void BeginPlay() override;
 

@@ -47,6 +47,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<class UCameraShake> ShakeClass;
+
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<class ACThrow> ThrowClass;
 };
 
 
@@ -59,7 +62,7 @@ public:
 	FORCEINLINE class ACAttachment* GetAttachment() { return Attachment; }
 	FORCEINLINE class ACEquipment* GetEquipment() { return Equipment; }
 	FORCEINLINE class ACDoAction* GetDoAction() { return DoAction; }
-	FORCEINLINE FLinearColor GetEquipmentColor(){ return EquipmentColor; }
+	FORCEINLINE FLinearColor GetEquipmentColor() { return EquipmentColor; }
 
 public:
 	void BeginPlay(class ACharacter* InOwnerCharacter);

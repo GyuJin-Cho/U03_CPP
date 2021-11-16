@@ -44,6 +44,7 @@ public:
 	void PlayBackStep();
 	void PlayHitted();
 	void PlayDead();
+
 protected:
 	virtual void BeginPlay() override;
 

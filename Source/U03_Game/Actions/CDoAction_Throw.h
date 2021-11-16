@@ -8,7 +8,7 @@ UCLASS()
 class U03_GAME_API ACDoAction_Throw : public ACDoAction
 {
 	GENERATED_BODY()
-	
+
 protected:
 	void BeginPlay() override;
 
@@ -19,6 +19,9 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
+	virtual void OnAim() override;
+	virtual void OffAim() override;
+	
 	UPROPERTY()
-		class UCAnim* Aim;
+		class UCAim* Aim;
 };

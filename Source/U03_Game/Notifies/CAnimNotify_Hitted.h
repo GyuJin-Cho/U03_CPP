@@ -12,4 +12,5 @@ class U03_GAME_API UCAnimNotify_Hitted : public UAnimNotify
 public:
 	FString GetNotifyName_Implementation() const override;
 	virtual void Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) override;
+	
 };

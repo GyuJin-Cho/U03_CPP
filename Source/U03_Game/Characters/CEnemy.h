@@ -10,9 +10,12 @@ UCLASS()
 class U03_GAME_API ACEnemy : public ACharacter, public IICharacter
 {
 	GENERATED_BODY()
+
+
 private:
 	UPROPERTY(EditDefaultsOnly)
 		float LaunchValue = 100.0f;
+
 private:
 	UPROPERTY(VisibleDefaultsOnly)
 		class UWidgetComponent* NameWidget;
@@ -46,6 +49,7 @@ public:
 
 	UFUNCTION()
 		void ResetColor();
+
 private:
 	UFUNCTION()
 		void OnStateTypeChanged(EStateType InPrevType, EStateType InNewType);

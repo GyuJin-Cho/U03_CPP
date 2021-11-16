@@ -11,7 +11,7 @@ class U03_GAME_API ACDoAction_Melee : public ACDoAction
 
 public:
 	FORCEINLINE void EnableCombo() { bEnable = true; }
-	FORCEINLINE void Disableombo() { bEnable = false; }
+	FORCEINLINE void DisableCombo() { bEnable = false; }
 
 public:
 	virtual void DoAction() override;
@@ -27,12 +27,10 @@ private:
 	UFUNCTION()
 		void RestoreGlobalTimeDilation();
 
+
 private:
 	int32 Index;
 
-	/// <summary>
-	/// ÄÞº¸ Ã¼Å©
-	/// </summary>
 	bool bEnable;
 	bool bExist;
 	bool bLast;

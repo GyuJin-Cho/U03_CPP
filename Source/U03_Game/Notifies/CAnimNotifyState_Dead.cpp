@@ -1,6 +1,7 @@
 #include "CAnimNotifyState_Dead.h"
 #include "Global.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Components/CActionComponent.h"
 #include "Characters/CEnemy.h"
 
@@ -20,7 +21,7 @@ void UCAnimNotifyState_Dead::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnim
 
 	action->OffAllCollision();
 
-	ACEnemy* enemy = Cast<ACEnemy>(MeshComp->GetOwner());
+	ACEnemy* enemy =  Cast<ACEnemy>(MeshComp->GetOwner());
 	CheckNull(enemy);
 
 	enemy->GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
@@ -28,7 +29,6 @@ void UCAnimNotifyState_Dead::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnim
 
 void UCAnimNotifyState_Dead::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
 {
-	Super::NotifyEnd(MeshComp, Animation);
 	CheckNull(MeshComp);
 	CheckNull(MeshComp->GetOwner());
 
@@ -41,4 +41,5 @@ void UCAnimNotifyState_Dead::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSe
 	CheckNull(enemy);
 
 	enemy->ChangeColor(FLinearColor(0.2f, 0.2f, 0.2f, 1.0f));
+	//MeshComp->GetOwner()->Destroy();
 }

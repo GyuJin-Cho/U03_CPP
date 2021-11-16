@@ -78,10 +78,10 @@ void ACEnemy::BeginPlay()
 
 float ACEnemy::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-	Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+	float damage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 	DamageInstigator = EventInstigator;
 
-	Status->SubHealth(Damage);
+	Status->SubHealth(damage);
 
 	if (Status->GetHealth() <= 0.0f)
 	{
@@ -102,12 +102,12 @@ void ACEnemy::Hitted()
 
 	FVector start = GetActorLocation();
 	FVector target = DamageInstigator->GetPawn()->GetActorLocation();
-
 	SetActorRotation(UKismetMathLibrary::FindLookAtRotation(start, target));
-	
+
 	FVector direction = target - start;
 	direction.Normalize();
 	LaunchCharacter(-direction * LaunchValue, true, false);
+
 	ChangeColor(FLinearColor::Red);
 
 	UKismetSystemLibrary::K2_SetTimer(this, "ResetColor", 1.0f, false);
@@ -117,9 +117,8 @@ void ACEnemy::Dead()
 {
 	CheckFalse(State->IsDeadMode());
 	Montages->PlayDead();
-
-
 }
+
 
 void ACEnemy::ChangeColor(FLinearColor InColor)
 {
@@ -127,7 +126,8 @@ void ACEnemy::ChangeColor(FLinearColor InColor)
 	{
 		FLinearColor color = InColor * 30.0f;
 		LogoMaterial->SetVectorParameterValue("LogoLight", color);
-		LogoMaterial->SetScalarParameterValue("UseLight", State->IsHittedMode()?1:0);
+		LogoMaterial->SetScalarParameterValue("UseLight", State->IsHittedMode() ? 1 : 0);
+
 		return;
 	}
 
@@ -137,23 +137,20 @@ void ACEnemy::ChangeColor(FLinearColor InColor)
 
 void ACEnemy::ResetColor()
 {
-	FLinearColor color = Action->GetCurrent()->GetEquipmentColor();
+	 FLinearColor color = Action->GetCurrent()->GetEquipmentColor();
 
-	LogoMaterial->SetVectorParameterValue("LogoLight", color);
-	LogoMaterial->SetScalarParameterValue("UseLight", 0);
+	 LogoMaterial->SetVectorParameterValue("LogoLight", color);
+	 LogoMaterial->SetScalarParameterValue("UseLight", 0);
 }
 
 void ACEnemy::OnStateTypeChanged(EStateType InPrevType, EStateType InNewType)
 {
 	switch (InNewType)
 	{
-	case EStateType::Hitted:
-		Hitted(); 
-		break;
-	case EStateType::Dead:
-		Dead();
-		break;
+		case EStateType::Hitted: Hitted();break;
+		case EStateType::Dead:	Dead();	break;
 	}
 }
+
 
 

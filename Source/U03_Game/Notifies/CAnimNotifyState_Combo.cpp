@@ -1,8 +1,8 @@
 #include "CAnimNotifyState_Combo.h"
 #include "Global.h"
-#include "Actions/CActionData.h"
-#include "Actions/CDoAction_Melee.h"
 #include "Components/CActionComponent.h"
+#include "Actions/CDoAction_Melee.h"
+
 FString UCAnimNotifyState_Combo::GetNotifyName_Implementation() const
 {
 	return "Combo";
@@ -25,7 +25,6 @@ void UCAnimNotifyState_Combo::NotifyBegin(USkeletalMeshComponent* MeshComp, UAni
 
 void UCAnimNotifyState_Combo::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
 {
-	Super::NotifyEnd(MeshComp, Animation);
 	CheckNull(MeshComp);
 	CheckNull(MeshComp->GetOwner());
 
@@ -35,5 +34,5 @@ void UCAnimNotifyState_Combo::NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimS
 	ACDoAction_Melee* melee = Cast<ACDoAction_Melee>(action->GetCurrent()->GetDoAction());
 	CheckNull(melee);
 
-	melee->Disableombo();
+	melee->DisableCombo();
 }

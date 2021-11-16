@@ -32,10 +32,10 @@ void ACDoAction_Melee::Begin_DoAction()
 	CheckFalse(bExist);
 	bExist = false;
 
-	OwnerCharacter->StopAnimMontage(Datas[Index].AnimMontage);
+	OwnerCharacter->StopAnimMontage();
 
 	Index++;
-	Index = FMath::Clamp<int32>(Index, 0, Datas.Num()-1);
+	Index = FMath::Clamp<int32>(Index, 0, Datas.Num() - 1);
 
 	OwnerCharacter->PlayAnimMontage(Datas[Index].AnimMontage, Datas[Index].PlayRate, Datas[Index].StartSection);
 	Datas[Index].bCanMove ? Status->SetMove() : Status->SetStop();
@@ -62,15 +62,13 @@ void ACDoAction_Melee::OnAttachmentBeginOverlap(ACharacter* InAttacker, AActor* 
 		if (other == InOtherCharacter)
 			return;
 	}
-
 	HittedCharacter.Add(InOtherCharacter);
 
 	//히트 스탑
 	float hitStop = Datas[Index].HitStop;
-
 	if (FMath::IsNearlyZero(hitStop) == false)
 	{
-		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 2e-2f); //0.02
+		UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 2e-2f);
 		UKismetSystemLibrary::K2_SetTimer(this, "RestoreGlobalTimeDilation", hitStop * 2e-2f, false);
 	}
 
@@ -78,9 +76,9 @@ void ACDoAction_Melee::OnAttachmentBeginOverlap(ACharacter* InAttacker, AActor* 
 	UParticleSystem* hitEffect = Datas[Index].Effect;
 	if (!!hitEffect)
 	{
-		FTransform transForm = Datas[Index].EffectTransform;
-		transForm.AddToTranslation(InOtherCharacter->GetActorLocation());
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), hitEffect, transForm);
+		FTransform transform = Datas[Index].EffectTransform;
+		transform.AddToTranslation(InOtherCharacter->GetActorLocation());
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), hitEffect, transform);
 	}
 
 	//카메라 쉐이크
@@ -89,10 +87,9 @@ void ACDoAction_Melee::OnAttachmentBeginOverlap(ACharacter* InAttacker, AActor* 
 	{
 		APlayerController* controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 		if (!!controller)
-		{
 			controller->PlayerCameraManager->PlayCameraShake(shake);
-		}
 	}
+	
 
 	//실제 대미지 전달
 	FDamageEvent e;
@@ -108,5 +105,5 @@ void ACDoAction_Melee::OnAttachmentEndOverlap(ACharacter* InAttacker, AActor* In
 
 void ACDoAction_Melee::RestoreGlobalTimeDilation()
 {
-	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1);
+	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
 }

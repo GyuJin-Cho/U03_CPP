@@ -58,8 +58,12 @@ public:
 	void SetMagicBallMode();
 
 	void OffAllCollision();
+
 public:
 	void DoAction();
+
+	void DoOnAim();
+	void DoOffAim();
 
 private:
 	void SetMode(EActionType InType);

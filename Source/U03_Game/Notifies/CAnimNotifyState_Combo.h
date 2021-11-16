@@ -8,7 +8,7 @@ UCLASS()
 class U03_GAME_API UCAnimNotifyState_Combo : public UAnimNotifyState
 {
 	GENERATED_BODY()
-
+	
 public:
 	FString GetNotifyName_Implementation() const override;
 

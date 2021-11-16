@@ -3,8 +3,8 @@
 #include "GameFramework/Character.h"
 #include "Actions/CActionData.h"
 #include "Actions/CEquipment.h"
-#include "Actions/CDoAction.h"
 #include "Actions/CAttachment.h"
+#include "Actions/CDoAction.h"
 
 UCActionComponent::UCActionComponent()
 {
@@ -70,6 +70,7 @@ void UCActionComponent::OffAllCollision()
 	{
 		if (!!data == false)
 			continue;
+
 		if (!!data->GetAttachment() == false)
 			continue;
 
@@ -120,5 +121,31 @@ void UCActionComponent::DoAction()
 
 		if (!!action)
 			action->DoAction();
+	}
+}
+
+void UCActionComponent::DoOnAim()
+{
+	CheckTrue(IsUnarmedMode());
+
+	if (!!Datas[(int32)Type])
+	{
+		ACDoAction* action = Datas[(int32)Type]->GetDoAction();
+
+		if (!!action)
+			action->OnAim();
+	}
+}
+
+void UCActionComponent::DoOffAim()
+{
+	CheckTrue(IsUnarmedMode());
+
+	if (!!Datas[(int32)Type])
+	{
+		ACDoAction* action = Datas[(int32)Type]->GetDoAction();
+
+		if (!!action)
+			action->OffAim();
 	}
 }
