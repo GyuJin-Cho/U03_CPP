@@ -18,6 +18,7 @@ void ACDoAction_Warp::BeginPlay()
 			break;
 		}
 	}
+
 }
 
 void ACDoAction_Warp::DoAction()
@@ -27,7 +28,7 @@ void ACDoAction_Warp::DoAction()
 	CheckFalse(*bEquipped);
 
 	FRotator rotator;
-	CheckFalse(GetCursorLocationAndRotationy(Location, rotator));
+	CheckFalse(GetCursorLocationAndRotation(Location, rotator));
 
 	CheckFalse(State->IsIdleMode());
 	State->SetActionMode();
@@ -38,7 +39,6 @@ void ACDoAction_Warp::DoAction()
 void ACDoAction_Warp::Begin_DoAction()
 {
 	FTransform transform = Datas[0].EffectTransform;
-
 	UGameplayStatics::SpawnEmitterAttached(Datas[0].Effect, OwnerCharacter->GetMesh(), "", transform.GetLocation(), FRotator(transform.GetRotation()), transform.GetScale3D());
 }
 
@@ -46,10 +46,9 @@ void ACDoAction_Warp::End_DoAction()
 {
 	OwnerCharacter->SetActorLocation(Location);
 	Location = FVector::ZeroVector;
-
+	
 	State->SetIdleMode();
 	Status->SetMove();
-
 }
 
 void ACDoAction_Warp::Tick(float DeltaTime)
@@ -58,19 +57,17 @@ void ACDoAction_Warp::Tick(float DeltaTime)
 
 	FVector location;
 	FRotator rotator;
-	if (GetCursorLocationAndRotationy(location,rotator))
+	if (GetCursorLocationAndRotation(location, rotator))
 	{
 		Decal->SetVisibility(true);
 		Decal->SetWorldLocation(location);
 		Decal->SetWorldRotation(rotator);
 	}
 	else
-	{
 		Decal->SetVisibility(false);
-	}
 }
 
-bool ACDoAction_Warp::GetCursorLocationAndRotationy(FVector& OutLocation, FRotator& OutRotator)
+bool ACDoAction_Warp::GetCursorLocationAndRotation(FVector& OutLocation, FRotator& OutRotator)
 {
 	APlayerController* controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 

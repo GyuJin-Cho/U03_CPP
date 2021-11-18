@@ -7,10 +7,10 @@ public class U03_Game : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
 		PublicDependencyModuleNames.AddRange(new string[] 
-		{
-			"Core", 
-			"CoreUObject", 
-			"Engine", 
+		{ 
+			"Core",
+			"CoreUObject",
+			"Engine",
 			"InputCore",
 			"AIModule"
 		});

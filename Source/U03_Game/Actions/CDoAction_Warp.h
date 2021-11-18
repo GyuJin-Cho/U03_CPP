@@ -20,9 +20,11 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
-	bool GetCursorLocationAndRotationy(FVector& OutLocation, FRotator& OutRotator);
+	bool GetCursorLocationAndRotation(FVector& OutLocation, FRotator& OutRotator);
 
+	
 private:
 	class UDecalComponent* Decal;
 	FVector Location;
+
 };

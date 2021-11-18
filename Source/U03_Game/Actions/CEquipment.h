@@ -18,6 +18,7 @@ public:
 	FORCEINLINE void SetColor(FLinearColor InColor) { Color = InColor; }
 	FORCEINLINE const bool* GetEquipped() { return &bEquipped; }
 
+	
 public:	
 	ACEquipment();
 

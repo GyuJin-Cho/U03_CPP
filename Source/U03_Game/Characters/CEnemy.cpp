@@ -10,6 +10,7 @@
 #include "Widgets/CUserWidget_Name.h"
 #include "Widgets/CUserWidget_Health.h"
 #include "Actions/CActionData.h"
+#include "Actions/CAction.h"
 
 ACEnemy::ACEnemy()
 {
@@ -68,11 +69,10 @@ void ACEnemy::BeginPlay()
 
 	NameWidget->InitWidget();
 	Cast<UCUserWidget_Name>(NameWidget->GetUserWidgetObject())->SetNameText(GetName());
+	Cast<UCUserWidget_Name>(NameWidget->GetUserWidgetObject())->SetControllerText(GetController()->GetName());
 
 	HealthWidget->InitWidget();
 	Cast<UCUserWidget_Health>(HealthWidget->GetUserWidgetObject())->Update(Status->GetHealth(), Status->GetMaxHealth());
-
-	Action->SetUnarmedMode();
 
 }
 
