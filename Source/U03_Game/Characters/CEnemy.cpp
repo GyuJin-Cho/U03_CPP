@@ -5,6 +5,7 @@
 #include "Components/CStatusComponent.h"
 #include "Components/CMontagesComponent.h"
 #include "Components/CActionComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Materials/MaterialInstanceConstant.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Widgets/CUserWidget_Name.h"
@@ -74,12 +75,15 @@ void ACEnemy::BeginPlay()
 	HealthWidget->InitWidget();
 	Cast<UCUserWidget_Health>(HealthWidget->GetUserWidgetObject())->Update(Status->GetHealth(), Status->GetMaxHealth());
 
+	NameWidget->SetVisibility(bDrawName);
 }
 
 float ACEnemy::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
 	float damage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
 	DamageInstigator = EventInstigator;
+
+	Action->AbortByDamaged();
 
 	Status->SubHealth(damage);
 
@@ -97,6 +101,7 @@ float ACEnemy::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AContro
 void ACEnemy::Hitted()
 {
 	Cast<UCUserWidget_Health>(HealthWidget->GetUserWidgetObject())->Update(Status->GetHealth(), Status->GetMaxHealth());
+	Status->SetMove();
 
 	Montages->PlayHitted();
 
@@ -116,7 +121,21 @@ void ACEnemy::Hitted()
 void ACEnemy::Dead()
 {
 	CheckFalse(State->IsDeadMode());
+
+	NameWidget->SetVisibility(false);
+	HealthWidget->SetVisibility(false);
+
+	Action->Dead();
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
 	Montages->PlayDead();
+}
+
+void ACEnemy::End_Dead()
+{
+	Action->End_Dead();
+
+	Destroy();
 }
 
 

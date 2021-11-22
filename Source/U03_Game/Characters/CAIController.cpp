@@ -10,6 +10,8 @@
 
 ACAIController::ACAIController()
 {
+	PrimaryActorTick.bCanEverTick = true;
+
 	CHelpers::CreateActorComponent(this, &Blackboard, "Blackboard");
 	CHelpers::CreateActorComponent(this, &Behavior, "Behavior");
 	CHelpers::CreateActorComponent(this, &Perception, "Perception");
@@ -32,6 +34,16 @@ void ACAIController::BeginPlay()
 	Super::BeginPlay();
 }
 
+void ACAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	CheckFalse(bDrawDebug);
+	FVector center = OwnerEnemy->GetActorLocation();
+	center.Z -= AdjustCircleHight;
+	DrawDebugCircle(GetWorld(), center, Sight->SightRadius, 300, FColor::Green, false, -1.0f, 0, 0, FVector::RightVector, FVector::ForwardVector);
+	DrawDebugCircle(GetWorld(), center, BehaviorRange, 300, FColor::Red, false, -1.0f, 0, 0, FVector::RightVector, FVector::ForwardVector);
+}
 void ACAIController::OnPossess(APawn* InPawn)
 {
 	Super::OnPossess(InPawn);

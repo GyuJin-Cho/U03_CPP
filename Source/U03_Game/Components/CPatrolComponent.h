@@ -18,7 +18,7 @@ private:
 		int32 Index;
 
 	UPROPERTY(EditAnywhere)
-		bool bReserve;
+		bool bReverse;
 
 	UPROPERTY(EditAnywhere)
 		float AcceptanceRadius = 50.0f;
@@ -29,9 +29,10 @@ public:
 public:	
 	UCPatrolComponent();
 
+	bool GetMoveTo(FVector& OutLocation, float& OutAcceptanceRadius);
+	void UpdateNextIndex();
+
 protected:
 	virtual void BeginPlay() override;
-
-
 		
 };

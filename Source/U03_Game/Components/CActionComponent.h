@@ -66,6 +66,10 @@ public:
 	void DoOnAim();
 	void DoOffAim();
 
+	void Dead();
+	void End_Dead();
+	void AbortByDamaged();
+
 private:
 	void SetMode(EActionType InType);
 	void ChangeType(EActionType InNewType);

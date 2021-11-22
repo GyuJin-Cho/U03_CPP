@@ -1,34 +1,72 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "CPatrolComponent.h"
+#include "Global.h"
+#include "Objects/CPatrolPath.h"
+#include "Components/SplineComponent.h"
 
-// Sets default values for this component's properties
 UCPatrolComponent::UCPatrolComponent()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
+	
 }
 
-
-// Called when the game starts
 void UCPatrolComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	
 }
 
-
-// Called every frame
-void UCPatrolComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+bool UCPatrolComponent::GetMoveTo(FVector& OutLocation, float& OutAcceptanceRadius)
 {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+	OutLocation = FVector::ZeroVector;
+	OutAcceptanceRadius = AcceptanceRadius;
+	CheckNullResult(Path, false);
 
-	// ...
+	OutLocation = Path->GetSpline()->GetLocationAtSplinePoint(Index,ESplineCoordinateSpace::World);
+
+	return true;
+}
+
+void UCPatrolComponent::UpdateNextIndex()
+{
+	CheckNull(Path);
+
+	int32 count = Path->GetSpline()->GetNumberOfSplinePoints();
+
+	// 开林青
+	if (bReverse)
+	{
+		if (Index > 0)
+		{
+			Index--;
+			return;
+		}
+
+		if (Path->GetSpline()->IsClosedLoop())
+		{
+			Index = count-1;
+			return;
+		}
+		
+		Index = 1;
+		bReverse = false;
+
+		return;
+	}
+
+	// 沥林青
+	if (Index < count - 1)
+	{
+		Index++;
+		return;
+	}
+
+	if (Path->GetSpline()->IsClosedLoop())
+	{
+		Index = 0;
+		return;
+	}
+
+	Index = count - 2;
+	bReverse = true;
+	return;
 }
 
