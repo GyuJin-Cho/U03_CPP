@@ -3,9 +3,8 @@
 #include "Characters/CEnemy_AI.h"
 #include "Characters/CPlayer.h"
 #include "Characters/CAIController.h"
-#include "Components/CBehaviorComponent.h"
 #include "Components/CStateComponent.h"
-
+#include "Components/CBehaviorComponent.h"
 
 UCBTService_Melee::UCBTService_Melee()
 {
@@ -20,7 +19,7 @@ void UCBTService_Melee::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeM
 	UCBehaviorComponent* behavior = CHelpers::GetComponent<UCBehaviorComponent>(controller);
 
 	ACEnemy_AI* aiPawn = Cast<ACEnemy_AI>(controller->GetPawn());
-	UCStateComponent* state = CHelpers::GetComponent<UCStateComponent>(aiPawn);
+	UCStateComponent* state =CHelpers::GetComponent<UCStateComponent>(aiPawn);
 
 	if (state->IsHittedMode())
 	{
@@ -29,7 +28,6 @@ void UCBTService_Melee::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeM
 	}
 
 	ACPlayer* target = behavior->GetTargetPlayer();
-
 	if (target == nullptr)
 	{
 		behavior->SetWaitMode();

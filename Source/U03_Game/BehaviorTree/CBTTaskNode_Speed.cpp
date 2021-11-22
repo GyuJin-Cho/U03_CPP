@@ -2,7 +2,7 @@
 #include "Global.h"
 #include "Characters/CAIController.h"
 #include "Characters/CEnemy_AI.h"
-#include "Components/CStatusComponent.h"
+
 UCBTTaskNode_Speed::UCBTTaskNode_Speed()
 {
 	NodeName = "Speed";
@@ -11,9 +11,9 @@ UCBTTaskNode_Speed::UCBTTaskNode_Speed()
 EBTNodeResult::Type UCBTTaskNode_Speed::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	Super::ExecuteTask(OwnerComp, NodeMemory);
-
-	ACAIController* controller = Cast<ACAIController>(OwnerComp.GetOwner());
-	ACEnemy_AI* aiPawn = Cast < ACEnemy_AI>(controller->GetPawn());
+	
+	ACAIController* cotroller = Cast<ACAIController>(OwnerComp.GetOwner());
+	ACEnemy_AI* aiPawn = Cast<ACEnemy_AI>(cotroller->GetPawn());
 
 	UCStatusComponent* status = CHelpers::GetComponent<UCStatusComponent>(aiPawn);
 

@@ -30,8 +30,6 @@ ACAIController::ACAIController()
 void ACAIController::BeginPlay()
 {
 	Super::BeginPlay();
-
-	
 }
 
 void ACAIController::OnPossess(APawn* InPawn)
@@ -41,9 +39,9 @@ void ACAIController::OnPossess(APawn* InPawn)
 	OwnerEnemy = Cast<ACEnemy_AI>(InPawn);
 	UseBlackboard(OwnerEnemy->GetBehaviorTree()->BlackboardAsset, Blackboard);
 
-	SetGenericTeamId(OwnerEnemy->GetTeamId());
-	Perception->OnPerceptionUpdated.AddDynamic(this, &ACAIController::OnPerceptionUpdate);
-	
+	SetGenericTeamId(OwnerEnemy->GetTeamID());
+	Perception->OnPerceptionUpdated.AddDynamic(this, &ACAIController::OnPerceptionUpdated);
+
 	RunBehaviorTree(OwnerEnemy->GetBehaviorTree());
 
 	Behavior->SetBlackboard(Blackboard);
@@ -61,12 +59,10 @@ float ACAIController::GetSightRadius()
 	return Sight->SightRadius;
 }
 
-void ACAIController::OnPerceptionUpdate(const TArray<AActor*>& UpdatedActors)
+void ACAIController::OnPerceptionUpdated(const TArray<AActor*>& UpdatedActors)
 {
-
 	TArray<AActor*> actors;
 	Perception->GetCurrentlyPerceivedActors(nullptr, actors);
-
 
 	ACPlayer* player = nullptr;
 	for (AActor* actor : actors)
@@ -74,9 +70,7 @@ void ACAIController::OnPerceptionUpdate(const TArray<AActor*>& UpdatedActors)
 		player = Cast<ACPlayer>(actor);
 
 		if (!!player)
-		{
 			break;
-		}
 	}
 
 	Blackboard->SetValueAsObject("Player", player);

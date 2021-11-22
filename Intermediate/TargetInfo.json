@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "U03_Game",
+			"Path": "D:\\U03_CPP\\Source\\U03_Game.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "U03_GameEditor",
+			"Path": "D:\\U03_CPP\\Source\\U03_GameEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

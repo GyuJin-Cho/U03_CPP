@@ -8,13 +8,14 @@
 #include "CPlayer.generated.h"
 
 UCLASS()
-class U03_GAME_API ACPlayer : public ACharacter, public IICharacter , public IGenericTeamAgentInterface
+class U03_GAME_API ACPlayer : public ACharacter, public IICharacter, public IGenericTeamAgentInterface
 {
 	GENERATED_BODY()
 
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "TeamID")
 		uint8 TeamID = 0;
+
 private: //SceneComp
 	UPROPERTY(VisibleDefaultsOnly)
 		class USpringArmComponent* SpringArm;
