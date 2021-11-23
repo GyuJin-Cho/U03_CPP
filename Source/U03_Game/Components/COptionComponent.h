@@ -17,10 +17,10 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Mouse")
 		float VerticalLookRate = 45.0f;
 
-	UPROPERTY(EditAnywhere , Category = "Zoom")
+	UPROPERTY(EditAnywhere, Category = "Zoom")
 		float ZoomSpeed = 1000.0f;
 
-	UPROPERTY(EditAnywhere , Category = "Zoom")
+	UPROPERTY(EditAnywhere, Category = "Zoom")
 		FVector2D ZoomRange = FVector2D(0, 500);
 
 public:	

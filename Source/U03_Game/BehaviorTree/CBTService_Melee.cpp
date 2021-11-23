@@ -21,7 +21,7 @@ void UCBTService_Melee::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeM
 
 	ACEnemy_AI* aiPawn = Cast<ACEnemy_AI>(controller->GetPawn());
 	UCStateComponent* state =CHelpers::GetComponent<UCStateComponent>(aiPawn);
-	UCPatrolComponent* patrol = CHelpers::GetComponent<UCPatrolComponent>(aiPawn);
+	UCPatrolComponent* patrol =CHelpers::GetComponent<UCPatrolComponent>(aiPawn);
 
 	CheckTrue(state->IsDeadMode());
 

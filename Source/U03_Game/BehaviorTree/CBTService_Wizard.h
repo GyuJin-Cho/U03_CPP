@@ -8,10 +8,11 @@ UCLASS()
 class U03_GAME_API UCBTService_Wizard : public UBTService
 {
 	GENERATED_BODY()
-	
+
 public:
 	UCBTService_Wizard();
 
 protected:
 	virtual void TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds) override;
+	
 };

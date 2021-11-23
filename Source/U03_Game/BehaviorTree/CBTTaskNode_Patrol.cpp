@@ -22,9 +22,7 @@ EBTNodeResult::Type UCBTTaskNode_Patrol::ExecuteTask(UBehaviorTreeComponent& Own
 	FVector location;
 	float acceptanceRadius;
 	if (patrol->GetMoveTo(location, acceptanceRadius) == false)
-	{
 		return EBTNodeResult::Failed;
-	}
 
 	return EBTNodeResult::InProgress;
 }
@@ -36,12 +34,12 @@ void UCBTTaskNode_Patrol::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 	ACAIController* controller = Cast<ACAIController>(OwnerComp.GetOwner());
 	ACEnemy_AI* aiPawn = Cast<ACEnemy_AI>(controller->GetPawn());
 	UCPatrolComponent* patrol = CHelpers::GetComponent<UCPatrolComponent>(aiPawn);
+
 	FVector location;
 	float acceptanceRadius;
-
 	patrol->GetMoveTo(location, acceptanceRadius);
 
-	EPathFollowingRequestResult::Type type = controller->MoveToLocation(location, acceptanceRadius,false);
+	EPathFollowingRequestResult::Type type = controller->MoveToLocation(location, acceptanceRadius, false);
 
 	if (type == EPathFollowingRequestResult::Failed)
 	{
@@ -52,7 +50,7 @@ void UCBTTaskNode_Patrol::TickTask(UBehaviorTreeComponent& OwnerComp, uint8* Nod
 	if (type == EPathFollowingRequestResult::AlreadyAtGoal)
 	{
 		FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
-		
+
 		patrol->UpdateNextIndex();
 	}
 }

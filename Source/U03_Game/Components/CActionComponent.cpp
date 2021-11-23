@@ -113,6 +113,8 @@ void UCActionComponent::ChangeType(EActionType InNewType)
 		OnActionTypeChanged.Broadcast(prevType, Type);
 }
 
+
+
 void UCActionComponent::DoAction()
 {
 	CheckTrue(IsUnarmedMode());
@@ -162,17 +164,13 @@ void UCActionComponent::End_Dead()
 	for (int32 i = 0; i < (int32)EActionType::Max; i++)
 	{
 		if (!!Datas[i] && !!Datas[i]->GetAttachment())
-		{
 			Datas[i]->GetAttachment()->Destroy();
-		}
+
 		if (!!Datas[i] && !!Datas[i]->GetEquipment())
-		{
 			Datas[i]->GetEquipment()->Destroy();
-		}
+
 		if (!!Datas[i] && !!Datas[i]->GetDoAction())
-		{
 			Datas[i]->GetDoAction()->Destroy();
-		}
 	}
 }
 
@@ -186,9 +184,8 @@ void UCActionComponent::AbortByDamaged()
 		Datas[(int32)Type]->GetEquipment()->Begin_Equip();
 		Datas[(int32)Type]->GetEquipment()->End_Equip();
 	}
-	
+
 	if (!!Datas[(int32)Type]->GetDoAction())
-	{
 		Datas[(int32)Type]->GetDoAction()->Abort();
-	}
+
 }

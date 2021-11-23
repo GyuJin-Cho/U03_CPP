@@ -6,8 +6,8 @@
 #include "Components/CStateComponent.h"
 #include "Components/CStatusComponent.h"
 #include "Components/CBehaviorComponent.h"
-#include "Actions/CAttachment.h"
 #include "Characters/CPlayer.h"
+#include "Actions/CAttachment.h"
 
 void ACDoAction_Warp::BeginPlay()
 {
@@ -88,7 +88,6 @@ void ACDoAction_Warp::Tick(float DeltaTime)
 
 ACPlayer* ACDoAction_Warp::UseCursorLocation()
 {
-
 	return Cast<ACPlayer>(OwnerCharacter);
 }
 

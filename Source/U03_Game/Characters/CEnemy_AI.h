@@ -19,6 +19,7 @@ private:
 private:
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCPatrolComponent* Patrol;
+
 public:
 	FORCEINLINE class UBehaviorTree* GetBehaviorTree() { return BehaviorTree; }
 	FORCEINLINE uint8 GetTeamID() { return TeamID; }

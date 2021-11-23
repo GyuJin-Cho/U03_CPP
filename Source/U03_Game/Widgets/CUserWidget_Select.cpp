@@ -6,11 +6,9 @@
 
 void UCUserWidget_Select::NativeConstruct()
 {
-	TArray<UWidget*>children = Grid->GetAllChildren();
+	TArray<UWidget*> children = Grid->GetAllChildren();
 	for (UWidget* child : children)
-	{
 		Items.Add(child->GetName(), Cast<UCUserWidget_SelectItem>(child));
-	}
 
 	Super::NativeConstruct();
 }
@@ -21,9 +19,8 @@ void UCUserWidget_Select::Click(FString InName)
 		Items[InName]->OnUserWidget_Select_Clicked.Broadcast();
 
 	SetVisibility(ESlateVisibility::Hidden);
-
-	UGameplayStatics::GetPlayerController(GetWorld(),0)->bShowMouseCursor = false;
-	UGameplayStatics::GetPlayerController(GetWorld(),0)->SetInputMode(FInputModeGameOnly());
+	UGameplayStatics::GetPlayerController(GetWorld(), 0)->bShowMouseCursor = false;
+	UGameplayStatics::GetPlayerController(GetWorld(), 0)->SetInputMode(FInputModeGameOnly());
 	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
 }
 
@@ -40,4 +37,5 @@ void UCUserWidget_Select::Unhover(FString InName)
 	if (!!border)
 		border->SetBrushColor(FLinearColor::White);
 }
+
 

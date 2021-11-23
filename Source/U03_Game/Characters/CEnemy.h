@@ -13,7 +13,6 @@ class U03_GAME_API ACEnemy : public ACharacter, public IICharacter
 
 
 private:
-
 	UPROPERTY(EditAnywhere, Category = "DebugSettings")
 		bool bDrawName = true;
 

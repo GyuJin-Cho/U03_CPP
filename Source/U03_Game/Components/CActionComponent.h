@@ -68,6 +68,7 @@ public:
 
 	void Dead();
 	void End_Dead();
+
 	void AbortByDamaged();
 
 private:

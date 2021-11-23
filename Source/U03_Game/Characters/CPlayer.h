@@ -19,6 +19,7 @@ private:
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "Widgets")
 		TSubclassOf<class UCUserWidget_Select> SelectWidgetClass;
+
 private: //SceneComp
 	UPROPERTY(VisibleDefaultsOnly)
 		class USpringArmComponent* SpringArm;
@@ -41,10 +42,14 @@ private: //ActorComp
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCActionComponent* Action;
+
 public:
-	FORCEINLINE class UCUserWidget_Select* GetSelectWidget() {return SelectWidget;}
+	FORCEINLINE class UCUserWidget_Select* GetSelectWidget() { return SelectWidget; }
+
 public:
 	ACPlayer();
+
+	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
 protected:
 	virtual void BeginPlay() override;
@@ -95,6 +100,7 @@ private:
 	void Hitted();
 	void Dead();
 	void End_Dead();
+
 public:
 	virtual void ChangeColor(FLinearColor InColor) override;
 
@@ -105,9 +111,6 @@ private:
 private:
 	class UMaterialInstanceDynamic* BodyMaterial;
 	class UMaterialInstanceDynamic* LogoMaterial;
-
-public:
-	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
 private:
 	class AController* DamageInstigator;

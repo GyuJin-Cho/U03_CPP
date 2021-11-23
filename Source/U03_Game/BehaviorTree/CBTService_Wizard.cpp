@@ -3,8 +3,9 @@
 #include "Characters/CAIController.h"
 #include "Characters/CEnemy_AI.h"
 #include "Characters/CPlayer.h"
-#include "Components/CStateComponent.h"
 #include "Components/CBehaviorComponent.h"
+#include "Components/CStateComponent.h"
+
 UCBTService_Wizard::UCBTService_Wizard()
 {
 	NodeName = "Wizard";
@@ -29,7 +30,6 @@ void UCBTService_Wizard::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* Node
 	}
 
 	ACPlayer* target = behavior->GetTargetPlayer();
-
 	if (target == nullptr)
 	{
 		behavior->SetWaitMode();

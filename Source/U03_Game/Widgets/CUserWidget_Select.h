@@ -4,6 +4,8 @@
 #include "Blueprint/UserWidget.h"
 #include "CUserWidget_Select.generated.h"
 
+
+
 UCLASS()
 class U03_GAME_API UCUserWidget_Select : public UUserWidget
 {
@@ -11,7 +13,7 @@ class U03_GAME_API UCUserWidget_Select : public UUserWidget
 
 public:
 	FORCEINLINE class UCUserWidget_SelectItem* GetItem(FString InName) { return Items[InName]; }
-
+	
 public:
 	void Click(FString InName);
 	void Hover(FString InName);
@@ -26,4 +28,5 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 		TMap<FString, class UCUserWidget_SelectItem*> Items;
+
 };

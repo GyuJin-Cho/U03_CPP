@@ -8,6 +8,7 @@ UCLASS()
 class U03_GAME_API UCEnvQueryContext_Player : public UEnvQueryContext
 {
 	GENERATED_BODY()
+	
 private:
 	virtual void ProvideContext(FEnvQueryInstance& QueryInstance, FEnvQueryContextData& ContextData) const override;
 };

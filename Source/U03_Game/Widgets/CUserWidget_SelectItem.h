@@ -24,6 +24,8 @@ protected:
 public:
 	UPROPERTY(BlueprintAssignable)
 		FUserWidget_Select_Clicked OnUserWidget_Select_Clicked;
+
 private:
 	class UCUserWidget_Select* GetSelectWidget();
+	
 };

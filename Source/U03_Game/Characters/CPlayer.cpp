@@ -56,9 +56,9 @@ ACPlayer::ACPlayer()
 	CHelpers::GetClass<UCUserWidget_Select>(&SelectWidgetClass, "WidgetBlueprint'/Game/Widgets/WB_Select.WB_Select_C'");
 }
 
+
 void ACPlayer::BeginPlay()
 {
-
 	Super::BeginPlay();
 
 	UMaterialInstanceConstant* body, *logo;
@@ -79,12 +79,12 @@ void ACPlayer::BeginPlay()
 	SelectWidget->AddToViewport();
 	SelectWidget->SetVisibility(ESlateVisibility::Hidden);
 
-	SelectWidget->GetItem("Item1")->OnUserWidget_Select_Clicked.AddDynamic(this,&ACPlayer::OnFist);
-	SelectWidget->GetItem("Item2")->OnUserWidget_Select_Clicked.AddDynamic(this,&ACPlayer::OnOneHand);
-	SelectWidget->GetItem("Item3")->OnUserWidget_Select_Clicked.AddDynamic(this,&ACPlayer::OnTwoHand);
-	SelectWidget->GetItem("Item4")->OnUserWidget_Select_Clicked.AddDynamic(this,&ACPlayer::OnMagicBall);
-	SelectWidget->GetItem("Item5")->OnUserWidget_Select_Clicked.AddDynamic(this,&ACPlayer::OnWarp);
-	SelectWidget->GetItem("Item6")->OnUserWidget_Select_Clicked.AddDynamic(this,&ACPlayer::OnTornado);
+	SelectWidget->GetItem("Item1")->OnUserWidget_Select_Clicked.AddDynamic(this, &ACPlayer::OnFist);
+	SelectWidget->GetItem("Item2")->OnUserWidget_Select_Clicked.AddDynamic(this, &ACPlayer::OnOneHand);
+	SelectWidget->GetItem("Item3")->OnUserWidget_Select_Clicked.AddDynamic(this, &ACPlayer::OnTwoHand);
+	SelectWidget->GetItem("Item4")->OnUserWidget_Select_Clicked.AddDynamic(this, &ACPlayer::OnMagicBall);
+	SelectWidget->GetItem("Item5")->OnUserWidget_Select_Clicked.AddDynamic(this, &ACPlayer::OnWarp);
+	SelectWidget->GetItem("Item6")->OnUserWidget_Select_Clicked.AddDynamic(this, &ACPlayer::OnTornado);
 }
 
 void ACPlayer::Tick(float DeltaTime)
@@ -107,11 +107,13 @@ void ACPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAction("Walk", EInputEvent::IE_Released, this, &ACPlayer::OffWalk);
 
 	PlayerInputComponent->BindAction("Evade", EInputEvent::IE_Pressed, this, &ACPlayer::OnEvade);
+
 	PlayerInputComponent->BindAction("Fist", EInputEvent::IE_Pressed, this, &ACPlayer::OnFist);
 	PlayerInputComponent->BindAction("OneHand", EInputEvent::IE_Pressed, this, &ACPlayer::OnOneHand);
 	PlayerInputComponent->BindAction("TwoHand", EInputEvent::IE_Pressed, this, &ACPlayer::OnTwoHand);
 	PlayerInputComponent->BindAction("MagicBall", EInputEvent::IE_Pressed, this, &ACPlayer::OnMagicBall);
 	PlayerInputComponent->BindAction("Warp", EInputEvent::IE_Pressed, this, &ACPlayer::OnWarp);
+	PlayerInputComponent->BindAction("Tornado", EInputEvent::IE_Pressed, this, &ACPlayer::OnTornado);
 	PlayerInputComponent->BindAction("Action", EInputEvent::IE_Pressed, this, &ACPlayer::OnDoAction);
 	PlayerInputComponent->BindAction("Aim", EInputEvent::IE_Pressed, this, &ACPlayer::OnAim);
 	PlayerInputComponent->BindAction("Aim", EInputEvent::IE_Released, this, &ACPlayer::OffAim);
@@ -159,7 +161,7 @@ void ACPlayer::OnVerticalLook(float InAxis)
 
 void ACPlayer::OnZoom(float InAxis)
 {
-	SpringArm->TargetArmLength -= (InAxis* Option->GetZoomSpeed() * GetWorld()->GetDeltaSeconds());
+	SpringArm->TargetArmLength -= (InAxis * Option->GetZoomSpeed() * GetWorld()->GetDeltaSeconds());
 	SpringArm->TargetArmLength = FMath::Clamp(SpringArm->TargetArmLength, Option->GetMinZoomRange(), Option->GetMaxZoomRange());
 }
 
@@ -269,7 +271,9 @@ void ACPlayer::OnWarp()
 
 void ACPlayer::OnTornado()
 {
-	CLog::Print("Tornado!~~~~~~~~~~~~");
+	CheckFalse(State->IsIdleMode());
+
+	Action->SetTornadoMode();
 }
 
 void ACPlayer::OnDoAction()
@@ -297,11 +301,12 @@ void ACPlayer::OnSelectAction()
 	GetController<APlayerController>()->SetInputMode(FInputModeGameAndUI());
 
 	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 0.1f);
+
 }
 
 void ACPlayer::OffSelectAction()
 {
-
+	PrintLine();
 	SelectWidget->SetVisibility(ESlateVisibility::Hidden);
 	GetController<APlayerController>()->bShowMouseCursor = false;
 
@@ -309,6 +314,27 @@ void ACPlayer::OffSelectAction()
 
 	UGameplayStatics::SetGlobalTimeDilation(GetWorld(), 1.0f);
 }
+
+float ACPlayer::TakeDamage(float Damage, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	float damage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
+	DamageInstigator = EventInstigator;
+
+	Action->AbortByDamaged();
+
+	Status->SubHealth(damage);
+
+	if (Status->GetHealth() <= 0.0f)
+	{
+		State->SetDeadMode();
+		return 0.0f;
+	}
+
+	State->SetHittedMode();
+
+	return Status->GetHealth();
+}
+
 
 void ACPlayer::Hitted()
 {
@@ -331,14 +357,16 @@ void ACPlayer::End_Dead()
 	UKismetSystemLibrary::QuitGame(GetWorld(), GetController<APlayerController>(), EQuitPreference::Quit, false);
 }
 
+
+
 void ACPlayer::OnStateTypeChanged(EStateType InPrevType, EStateType InNewType)
 {
 	switch (InNewType)
 	{
-		case EStateType::Roll: Begin_Roll(); break;
-		case EStateType::BackStep: Begin_BackStep(); break;
-		case EStateType::Hitted: Hitted(); break;
-		case EStateType::Dead: Dead(); break;
+		case EStateType::Roll:		Begin_Roll(); break;
+		case EStateType::BackStep:	Begin_BackStep(); break;
+		case EStateType::Hitted:	Hitted(); break;
+		case EStateType::Dead:		Dead(); break;
 	}
 }
 
@@ -346,24 +374,4 @@ void ACPlayer::ChangeColor(FLinearColor InColor)
 {
 	BodyMaterial->SetVectorParameterValue("BodyColor", InColor);
 	LogoMaterial->SetVectorParameterValue("BodyColor", InColor);
-}
-
-float ACPlayer::TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
-{
-	float damage = Super::TakeDamage(Damage, DamageEvent, EventInstigator, DamageCauser);
-	DamageInstigator = EventInstigator;
-
-	Action->AbortByDamaged();
-
-	Status->SubHealth(damage);
-
-	if (Status->GetHealth() <= 0.0f)
-	{
-		State->SetDeadMode();
-		return 0.0f;
-	}
-
-	State->SetHittedMode();
-
-	return Status->GetHealth();
 }
