@@ -16,6 +16,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "TeamID")
 		uint8 TeamID = 0;
 
+private:
+	UPROPERTY(EditDefaultsOnly, Category = "Widgets")
+		TSubclassOf<class UCUserWidget_Select> SelectWidgetClass;
 private: //SceneComp
 	UPROPERTY(VisibleDefaultsOnly)
 		class USpringArmComponent* SpringArm;
@@ -38,7 +41,8 @@ private: //ActorComp
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCActionComponent* Action;
-
+public:
+	FORCEINLINE class UCUserWidget_Select* GetSelectWidget() {return SelectWidget;}
 public:
 	ACPlayer();
 
@@ -73,17 +77,24 @@ public:
 
 
 private:
-	void OnFist();
-	void OnOneHand();
-	void OnTwoHand();
-	void OnMagicBall();
-	void OnWarp();
+	UFUNCTION() void OnFist();
+	UFUNCTION() void OnOneHand();
+	UFUNCTION() void OnTwoHand();
+	UFUNCTION() void OnMagicBall();
+	UFUNCTION() void OnWarp();
+	UFUNCTION() void OnTornado();
 
 	void OnDoAction();
 
 	void OnAim();
 	void OffAim();
 
+	void OnSelectAction();
+	void OffSelectAction();
+
+	void Hitted();
+	void Dead();
+	void End_Dead();
 public:
 	virtual void ChangeColor(FLinearColor InColor) override;
 
@@ -94,4 +105,14 @@ private:
 private:
 	class UMaterialInstanceDynamic* BodyMaterial;
 	class UMaterialInstanceDynamic* LogoMaterial;
+
+public:
+	virtual float TakeDamage(float Damage, struct FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
+
+private:
+	class AController* DamageInstigator;
+
+protected:
+	UPROPERTY(BlueprintReadOnly)
+		class UCUserWidget_Select* SelectWidget;
 };
