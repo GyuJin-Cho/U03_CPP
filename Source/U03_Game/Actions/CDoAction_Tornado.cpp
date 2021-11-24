@@ -73,13 +73,11 @@ void ACDoAction_Tornado::Tick(float DeltaTime)
 	Angle += Speed * DeltaTime;
 
 	if (FMath::IsNearlyEqual(Angle, 360.0f))
-	{
 		Angle = 0.0f;
-	}
 
 	FVector rotVector = FVector(Distance, 0, 0);
 	FVector yawVector = rotVector.RotateAngleAxis(Angle, FVector::UpVector);
-
+	
 	location += yawVector;
 
 	Box->SetWorldLocation(location);

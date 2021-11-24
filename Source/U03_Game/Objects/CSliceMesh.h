@@ -8,6 +8,7 @@ UCLASS()
 class U03_GAME_API ACSliceMesh : public AActor
 {
 	GENERATED_BODY()
+
 private:
 	UPROPERTY(VisibleDefaultsOnly)
 		class USceneComponent* Scene;
@@ -17,12 +18,18 @@ private:
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UProceduralMeshComponent* ProcMesh;
+	
+
+	
 
 public:	
 	ACSliceMesh();
+	
+	virtual void OnConstruction(const FTransform& Transform) override;
+	
 
-	virtual void OnConstruction(const FTransform& Transfrom) override;
 protected:
 	virtual void BeginPlay() override;
+
 
 };
