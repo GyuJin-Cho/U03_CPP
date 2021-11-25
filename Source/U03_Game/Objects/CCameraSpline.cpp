@@ -6,6 +6,7 @@ ACCameraSpline::ACCameraSpline()
 {
 	CHelpers::CreateComponent(this, &Spline, "Spline");
 	CHelpers::GetAsset<UCurveFloat>(&Curve, "CurveFloat'/Game/Curve/Curve_UnNorm.Curve_UnNorm'");
+
 }
 
 void ACCameraSpline::BeginPlay()

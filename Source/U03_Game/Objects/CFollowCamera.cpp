@@ -1,9 +1,10 @@
 #include "CFollowCamera.h"
 #include "Global.h"
-#include "COmponents/SplineComponent.h"
+#include "Components/SplineComponent.h"
 #include "Camera/CameraComponent.h"
 #include "CCameraSpline.h"
 #include "Characters/CPlayer.h"
+
 
 ACFollowCamera::ACFollowCamera()
 {
@@ -11,6 +12,7 @@ ACFollowCamera::ACFollowCamera()
 
 	CHelpers::CreateComponent(this, &Camera, "Camera");
 }
+
 
 void ACFollowCamera::BeginPlay()
 {
@@ -22,11 +24,18 @@ void ACFollowCamera::BeginPlay()
 	for (AActor* actor : actors)
 	{
 		if (actor->IsA<ACCameraSpline>() && actor->GetName().Contains("BP_CCameraSpline"))
-		{
 			Spline = Cast<ACCameraSpline>(actor);
-		}
-		
 	}
+
+	
+}
+
+void ACFollowCamera::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (Timeline.IsPlaying())
+		Timeline.TickTimeline(DeltaTime);
 }
 
 void ACFollowCamera::SetTimeline()
@@ -49,33 +58,25 @@ void ACFollowCamera::SetTimeline()
 	controller->SetViewTarget(this);
 }
 
-void ACFollowCamera::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	
-	if (Timeline.IsPlaying())
-	{
-		Timeline.TickTimeline(DeltaTime);
-	}
-}
+
 
 void ACFollowCamera::OnProgress(float Output)
 {
 	USplineComponent* spline = Spline->GetSpline();
 	float length = spline->GetSplineLength();
 
-	FVector location = spline->GetLocationAtDistanceAlongSpline(length * Output, ESplineCoordinateSpace::World);
-	FRotator rotator = spline->GetRotationAtDistanceAlongSpline(length * Output, ESplineCoordinateSpace::World);
+	FVector location = spline->GetLocationAtDistanceAlongSpline(Output * length, ESplineCoordinateSpace::World);
+	FRotator rotation = spline->GetRotationAtDistanceAlongSpline(Output * length, ESplineCoordinateSpace::World);
 
 	SetActorLocation(location);
-	SetActorRotation(rotator);
+	SetActorRotation(rotation);
 }
 
 void ACFollowCamera::OnFinishProgress()
 {
 	Timeline.Stop();
 
-	APlayerController* controller = UGameplayStatics::GetPlayerController(GetWorld(),0);
+	APlayerController* controller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 	CheckNull(controller);
 
 	ACharacter* character = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);

@@ -4,6 +4,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Characters/CPlayer.h"
 
+
 ACLerpDoor::ACLerpDoor()
 {
 	PrimaryActorTick.bCanEverTick = true;
@@ -25,13 +26,12 @@ ACLerpDoor::ACLerpDoor()
 	Box->InitBoxExtent(FVector(150, 50, 100));
 	Box->SetRelativeLocation(FVector(0, 0, 100));
 	Box->SetCollisionProfileName("Trigger");
-
 }
 
 void ACLerpDoor::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	Box->SetHiddenInGame(bHiddenInGame);
 
 	Box->OnComponentBeginOverlap.AddDynamic(this, &ACLerpDoor::OnBeginOverlap);
@@ -39,6 +39,7 @@ void ACLerpDoor::BeginPlay()
 
 	OnLerpDoorOpen.AddUFunction(this, "Open");
 	OnLerpDoorClose.AddUFunction(this, "Close");
+	
 }
 
 void ACLerpDoor::Tick(float DeltaTime)
@@ -48,13 +49,9 @@ void ACLerpDoor::Tick(float DeltaTime)
 	FRotator rotation = Door->GetRelativeRotation();
 
 	if (bOpen)
-	{
 		Door->SetRelativeRotation(FMath::Lerp(rotation, FRotator(0, Rotation, 0), Speed));
-	}
 	else
-	{
 		Door->SetRelativeRotation(FMath::Lerp(rotation, FRotator(0, 0, 0), Speed));
-	}
 }
 
 void ACLerpDoor::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
@@ -63,7 +60,7 @@ void ACLerpDoor::OnBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor
 	CheckNull(OtherComp);
 	CheckTrue(OtherActor == this);
 	CheckFalse(OtherActor->GetClass()->IsChildOf(ACPlayer::StaticClass()));
-
+	
 	if (OnLerpDoorOpen.IsBound())
 		OnLerpDoorOpen.Broadcast(Cast<ACPlayer>(OtherActor));
 }
@@ -82,9 +79,9 @@ void ACLerpDoor::OnEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* 
 void ACLerpDoor::Open(ACPlayer* InPlayer)
 {
 	FVector forward = GetActorForwardVector();
-	FVector playerforward = InPlayer->GetActorForwardVector();
-
-	float direction = FMath::Sign(forward | playerforward);
+	FVector playerForward = InPlayer->GetActorForwardVector();
+	
+	float direction = FMath::Sign(forward | playerForward);
 	Rotation = direction * MaxDegree;
 
 	bOpen = true;

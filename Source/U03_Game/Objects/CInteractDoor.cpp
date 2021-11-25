@@ -72,7 +72,7 @@ void ACInteractDoor::Opening(float Delta)
 {
 	AddRotation = Direction * Speed * Delta;
 
-	if (FMath::IsNearlyEqual(Door->GetRelativeRotation().Yaw,Degree,2.0f))
+	if (FMath::IsNearlyEqual(Door->GetRelativeRotation().Yaw, Degree, 2.0f))
 	{
 		bOpening = false;
 		Door->SetRelativeRotation(FRotator(0, Degree, 0));
@@ -86,9 +86,9 @@ void ACInteractDoor::Opening(float Delta)
 
 void ACInteractDoor::Closing(float Delta)
 {
-	AddRotation = (Door->GetRelativeRotation().Yaw > 0.0f ? -Speed : Speed )* Delta;
+	AddRotation = (Door->GetRelativeRotation().Yaw > 0.0f ? -Speed : Speed) * Delta;
 
-	if (FMath::IsNearlyZero(Door->GetRelativeRotation().Yaw, 2.0f))
+	if (FMath::IsNearlyZero(Door->GetRelativeRotation().Yaw,  2.0f))
 	{
 		bClosing = false;
 		Door->SetRelativeRotation(FRotator::ZeroRotator);

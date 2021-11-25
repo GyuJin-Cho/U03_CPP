@@ -9,10 +9,11 @@ UCLASS()
 class U03_GAME_API ACFollowCamera : public AActor
 {
 	GENERATED_BODY()
-	
+
 private:
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCameraComponent* Camera;
+	
 public:	
 	ACFollowCamera();
 
@@ -31,9 +32,10 @@ private:
 
 	UFUNCTION(BlueprintCallable)
 		void OnFinishProgress();
+
 private:
+	
 
 	FTimeline Timeline;
 	class ACCameraSpline* Spline;
-
 };

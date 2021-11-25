@@ -8,12 +8,14 @@ UCLASS()
 class U03_GAME_API ACSetViewTarget : public AActor
 {
 	GENERATED_BODY()
+
 private:
 	UPROPERTY(EditInstanceOnly)
 		TArray<class ACameraActor*> Cameras;
 
 	UPROPERTY(EditInstanceOnly)
 		bool bUseChangeCamera = false;
+	
 public:	
 	ACSetViewTarget();
 
@@ -26,4 +28,6 @@ private:
 
 private:
 	uint32 Index;
+
+
 };

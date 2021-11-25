@@ -6,6 +6,7 @@
 
 DECLARE_MULTICAST_DELEGATE_OneParam(FLerpDoorOpen, class ACPlayer*);
 DECLARE_MULTICAST_DELEGATE(FLerpDoorClose);
+
 UCLASS()
 class U03_GAME_API ACLerpDoor : public AActor
 {
@@ -13,7 +14,7 @@ class U03_GAME_API ACLerpDoor : public AActor
 
 private:
 	UPROPERTY(EditAnywhere)
-		float Speed = 0.02;
+		float Speed = 0.02f;
 
 	UPROPERTY(EditAnywhere)
 		float MaxDegree = 90.0f;
@@ -34,7 +35,7 @@ private:
 
 	UPROPERTY(VisibleDefaultsOnly)
 		class UStaticMeshComponent* Door;
-	
+
 public:
 	FLerpDoorOpen OnLerpDoorOpen;
 	FLerpDoorClose OnLerpDoorClose;
@@ -51,6 +52,8 @@ private:
 
 	UFUNCTION()
 		void Close();
+
+	
 public:	
 	ACLerpDoor();
 
@@ -59,6 +62,7 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+
 
 private:
 	bool bOpen = false;

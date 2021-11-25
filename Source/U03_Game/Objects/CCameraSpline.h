@@ -8,6 +8,7 @@ UCLASS()
 class U03_GAME_API ACCameraSpline : public AActor
 {
 	GENERATED_BODY()
+	
 private:
 	UPROPERTY(VisibleAnywhere)
 		class UCurveFloat* Curve;
