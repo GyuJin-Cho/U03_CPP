@@ -16,6 +16,9 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "TeamID")
 		uint8 TeamID = 0;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Smear")
+		float SmearLength = 0.1f;
+
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "Widgets")
 		TSubclassOf<class UCUserWidget_Select> SelectWidgetClass;
@@ -46,6 +49,9 @@ private: //ActorComp
 	UPROPERTY(VisibleDefaultsOnly)
 		class UCFeetComponent* Feet;
 
+	UPROPERTY(VisibleDefaultsOnly)
+		class UPostProcessComponent* PostProcess;
+
 public:
 	FORCEINLINE class UCUserWidget_Select* GetSelectWidget() { return SelectWidget; }
 
@@ -74,6 +80,8 @@ private:
 	void OffWalk();
 
 	void OnEvade();
+	UFUNCTION()
+		void EndEvade();
 
 private:
 	void Begin_BackStep();
@@ -82,6 +90,9 @@ private:
 public:
 	void End_BackStep();
 	void End_Roll();
+
+private:
+	void UpdateSmear();
 
 
 private:
@@ -103,6 +114,10 @@ private:
 	void OnInteract();
 
 	void Hitted();
+
+	UFUNCTION()
+		void Hitted_End();
+
 	void Dead();
 	void End_Dead();
 

@@ -1,0 +1,14 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.Example.cpp.obj": [
+			"CGameplayDebugCategory.cpp.obj",
+			"Example.cpp.obj",
+			"CExampleComponent.cpp.obj"
+		],
+		"Module.Example.gen.cpp.obj": [
+			"CExampleComponent.gen.cpp.obj",
+			"Example.init.gen.cpp.obj"
+		]
+	}
+}
