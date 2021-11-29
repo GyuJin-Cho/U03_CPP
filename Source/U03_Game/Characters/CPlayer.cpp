@@ -81,6 +81,7 @@ void ACPlayer::BeginPlay()
 
 	BodyMaterial = UMaterialInstanceDynamic::Create(body, this);
 	LogoMaterial = UMaterialInstanceDynamic::Create(logo, this);
+	
 
 	GetMesh()->SetMaterial(0, BodyMaterial);
 	GetMesh()->SetMaterial(1, LogoMaterial);
@@ -205,19 +206,21 @@ void ACPlayer::OnEvade()
 	if (Action->IsUnarmedMode())
 	{
 		GetCharacterMovement()->GravityScale = 0.0f;
-		
-		FVector Direction = FVector::ZeroVector;
+
+		FVector direction = FVector::ZeroVector;
 		if (FMath::IsNearlyZero(GetVelocity().Size()))
-			Direction = GetActorUpVector();
-		
+			direction = GetActorUpVector();
 		else
-			Direction = GetVelocity().GetSafeNormal();
-		FVector launch = Direction * GetCharacterMovement()->MaxWalkSpeed * 0.5f;
+			direction = GetVelocity().GetSafeNormal();
+
+		FVector launch = direction * GetCharacterMovement()->MaxWalkSpeed * 0.5f;
+
 		LaunchCharacter(launch, false, true);
 		SpringArm->TargetArmLength = 300.0f;
 		UKismetSystemLibrary::K2_SetTimer(this, "EndEvade", 1.0f, false);
 		return;
 	}
+
 
 	if (InputComponent->GetAxisValue("MoveForward") < 0.0f)
 	{
@@ -283,8 +286,7 @@ void ACPlayer::UpdateSmear()
 	if (FMath::IsNearlyEqual(GetCharacterMovement()->MaxWalkSpeed, Status->GetSprintSpeed()))
 	{
 		BodyMaterial->SetVectorParameterValue("Direction", -GetVelocity());
-		BodyMaterial->SetScalarParameterValue("Amount", GetCharacterMovement()->MaxWalkSpeed* SmearLength);
-
+		BodyMaterial->SetScalarParameterValue("Amount", GetCharacterMovement()->MaxWalkSpeed * SmearLength);
 		return;
 	}
 

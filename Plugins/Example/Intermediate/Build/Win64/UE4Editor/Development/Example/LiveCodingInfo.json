@@ -3,6 +3,7 @@
 	{
 		"Module.Example.cpp.obj": [
 			"CGameplayDebugCategory.cpp.obj",
+			"CToolbarCommand.cpp.obj",
 			"Example.cpp.obj",
 			"CExampleComponent.cpp.obj"
 		],

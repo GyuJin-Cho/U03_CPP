@@ -3,14 +3,15 @@
 /MACHINE:x64
 /SUBSYSTEM:WINDOWS
 /DEF
-/NAME:"UE4Editor-Example-0006.dll"
+/NAME:"UE4Editor-Example-5060.dll"
 /IGNORE:4221
 /NODEFAULTLIB
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Intermediate\Build\Win64\U03_GameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CGameplayDebugCategory.cpp.obj"
+"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CToolbarCommand.cpp.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Example.cpp.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.cpp.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.gen.cpp.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Default.rc2.res"
-/OUT:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example-0006.lib"
+/OUT:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example-5060.lib"
 /INCLUDE:IMPLEMENT_MODULE_Example

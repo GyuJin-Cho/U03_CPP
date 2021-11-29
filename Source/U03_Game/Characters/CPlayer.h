@@ -80,6 +80,7 @@ private:
 	void OffWalk();
 
 	void OnEvade();
+
 	UFUNCTION()
 		void EndEvade();
 

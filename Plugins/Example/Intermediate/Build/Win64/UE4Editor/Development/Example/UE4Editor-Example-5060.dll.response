@@ -35,6 +35,7 @@
 /FUNCTIONPADMIN
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Intermediate\Build\Win64\U03_GameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CGameplayDebugCategory.cpp.obj"
+"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CToolbarCommand.cpp.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Example.cpp.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.cpp.obj"
 "W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.gen.cpp.obj"
@@ -69,8 +70,8 @@
 "W:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
 "W:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\GameplayDebugger\UE4Editor-GameplayDebugger.lib"
 "W:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
-/OUT:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Binaries\Win64\UE4Editor-Example-0004.dll"
-/IMPLIB:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example-0004.suppressed.lib"
-/PDB:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Binaries\Win64\UE4Editor-Example-0004.pdb"
+/OUT:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Binaries\Win64\UE4Editor-Example-5060.dll"
+/IMPLIB:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example-5060.suppressed.lib"
+/PDB:"W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Binaries\Win64\UE4Editor-Example-5060.pdb"
 /ignore:4078
 /INCLUDE:IMPLEMENT_MODULE_Example

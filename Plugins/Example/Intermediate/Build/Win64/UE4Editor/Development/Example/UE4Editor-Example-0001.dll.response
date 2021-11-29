@@ -66,9 +66,11 @@
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Slate\UE4Editor-Slate.lib"
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\GameplayDebugger\UE4Editor-GameplayDebugger.lib"
+"D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\EditorStyle\UE4Editor-EditorStyle.lib"
+"D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\LevelEditor\UE4Editor-LevelEditor.lib"
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
-/OUT:"D:\U03_CPP\Plugins\Example\Binaries\Win64\UE4Editor-Example-4864.dll"
-/IMPLIB:"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example-4864.suppressed.lib"
-/PDB:"D:\U03_CPP\Plugins\Example\Binaries\Win64\UE4Editor-Example-4864.pdb"
+/OUT:"D:\U03_CPP\Plugins\Example\Binaries\Win64\UE4Editor-Example-0001.dll"
+/IMPLIB:"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example-0001.suppressed.lib"
+/PDB:"D:\U03_CPP\Plugins\Example\Binaries\Win64\UE4Editor-Example-0001.pdb"
 /ignore:4078
 /INCLUDE:IMPLEMENT_MODULE_Example

@@ -1,7 +1,5 @@
 W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Definitions.Example.h
-W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Source\Example\Public\Example.h
-W:\UE_4.25\Engine\Source\Developer\GameplayDebugger\Public\GameplayDebugger.h
-W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Source\Example\01_DebugCategory/CGameplayDebugCategory.h
+W:\KKS\2021_07_1000\U03_Game_Git\U03_Game\Plugins\Example\Source\Example\01_DebugCategory\CGameplayDebugCategory.h
 W:\UE_4.25\Engine\Source\Developer\GameplayDebugger\Public\GameplayDebuggerCategory.h
 W:\UE_4.25\Engine\Source\Developer\GameplayDebugger\Public\GameplayDebuggerTypes.h
 W:\UE_4.25\Engine\Source\Developer\GameplayDebugger\Public\GameplayDebuggerAddonBase.h

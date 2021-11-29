@@ -34,7 +34,8 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "D:\U03_CPP\Intermediate\Build\Win64\U03_GameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Example.cpp.obj"
+"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.cpp.obj"
+"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.gen.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Default.rc2.res"
 "delayimp.lib"
 "wininet.lib"
@@ -64,6 +65,8 @@
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Slate\UE4Editor-Slate.lib"
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\SlateCore\UE4Editor-SlateCore.lib"
+"D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\GameplayDebugger\UE4Editor-GameplayDebugger.lib"
+"D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\EditorStyle\UE4Editor-EditorStyle.lib"
 "D:\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
 /OUT:"D:\U03_CPP\Plugins\Example\Binaries\Win64\UE4Editor-Example.dll"
 /IMPLIB:"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example.suppressed.lib"
