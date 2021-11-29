@@ -19,6 +19,10 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = "Smear")
 		float SmearLength = 0.1f;
 
+public:
+	UPROPERTY(EditDefaultsOnly)
+		class UCDataAsset* Test_DataAsset;
+
 private:
 	UPROPERTY(EditDefaultsOnly, Category = "Widgets")
 		TSubclassOf<class UCUserWidget_Select> SelectWidgetClass;

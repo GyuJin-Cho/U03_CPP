@@ -27,6 +27,11 @@ public class Example : ModuleRules
 				"GameplayDebugger",
 				"EditorStyle",
 				"LevelEditor",
+				"Projects",
+				"UnrealEd",
+				"AssetTools",
+				"PropertyEditor",
+				"U03_Game"
 			}
 			);
 
