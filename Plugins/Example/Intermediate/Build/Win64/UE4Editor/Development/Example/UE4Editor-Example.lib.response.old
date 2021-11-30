@@ -7,15 +7,8 @@
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\U03_CPP\Intermediate\Build\Win64\U03_GameEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CGameplayDebugCategory.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CDataAsset.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CDataAssetFactory.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CDataAssetToolAction.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Example.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CDataAsset.gen.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CDataAssetFactory.gen.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Example.init.gen.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.gen.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Default.rc2.res"
 /OUT:"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example.lib"

@@ -42,3 +42,5 @@ D:\UE_4.25\Engine\Source\Editor\UnrealEd\Public\Toolkits/AssetEditorManager.h
 D:\UE_4.25\Engine\Source\Editor\UnrealEd\Public\Toolkits/SimpleAssetEditor.h
 D:\U03_CPP\Plugins\Example\Source\Example\04_EditorDetailPanel/CEditorDetailPaneel.h
 D:\UE_4.25\Engine\Source\Editor\PropertyEditor\Public\IDetailCustomization.h
+D:\U03_CPP\Source\U03_Game\Objects/CbuttonActor.h
+D:\U03_CPP\Intermediate\Build\Win64\UE4Editor\Inc\U03_Game\CButtonActor.generated.h

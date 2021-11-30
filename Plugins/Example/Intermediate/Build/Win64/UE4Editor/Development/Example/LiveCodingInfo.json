@@ -2,19 +2,19 @@
 	"RemapUnityFiles": 
 	{
 		"Module.Example.cpp.obj": [
-			"CToolbarCommand.cpp.obj",
-			"CExampleComponent.cpp.obj",
 			"CGameplayDebugCategory.cpp.obj",
+			"CToolbarCommand.cpp.obj",
 			"CDataAsset.cpp.obj",
 			"CDataAssetFactory.cpp.obj",
 			"CDataAssetToolAction.cpp.obj",
+			"CExampleComponent.cpp.obj",
 			"CEditorDetailPaneel.cpp.obj",
 			"Example.cpp.obj"
 		],
 		"Module.Example.gen.cpp.obj": [
-			"CExampleComponent.gen.cpp.obj",
 			"CDataAsset.gen.cpp.obj",
 			"CDataAssetFactory.gen.cpp.obj",
+			"CExampleComponent.gen.cpp.obj",
 			"Example.init.gen.cpp.obj"
 		]
 	}

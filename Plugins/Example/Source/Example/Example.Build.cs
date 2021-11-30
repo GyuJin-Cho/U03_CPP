@@ -31,7 +31,7 @@ public class Example : ModuleRules
 				"UnrealEd",
 				"AssetTools",
 				"PropertyEditor",
-				"U03_Game"
+				"U03_Game",
 			}
 			);
 

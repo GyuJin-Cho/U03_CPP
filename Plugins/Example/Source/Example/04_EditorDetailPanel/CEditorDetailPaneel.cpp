@@ -43,7 +43,12 @@ FReply CEditorDetailPaneel::OnClicked()
 {
 	for (TWeakObjectPtr<UObject>& object : Objects)
 	{
-		GLog->Log(object->GetName());
+		//GLog->Log(object->GetName());
+
+		ACButtonActor* actor = Cast<ACButtonActor>(object);
+
+		if (!!actor)
+			actor->ApplyColor(FLinearColor::MakeRandomColor());
 	}
 
 	return FReply::Handled();

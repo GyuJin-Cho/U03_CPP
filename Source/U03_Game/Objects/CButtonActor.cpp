@@ -28,7 +28,7 @@ void ACButtonActor::ApplyColor(FLinearColor InColor)
 
 	for (FVectorParameterValue& value : material->VectorParameterValues)
 	{
-		if(value.ParameterInfo.Name.Compare("Color"))
+		if(value.ParameterInfo.Name.Compare("Color") == 0)
 			material->SetVectorParameterValueEditorOnly(value.ParameterInfo.Name,InColor);
 	}
 	
