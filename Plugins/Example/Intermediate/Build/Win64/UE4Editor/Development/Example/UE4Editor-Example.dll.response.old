@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
 "D:\U03_CPP\Intermediate\Build\Win64\U03_GameEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CEditorDetailPaneel.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Example.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.cpp.obj"
 "D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.gen.cpp.obj"

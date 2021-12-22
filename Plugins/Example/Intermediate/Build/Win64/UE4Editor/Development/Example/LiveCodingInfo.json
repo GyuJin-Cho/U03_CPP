@@ -7,9 +7,9 @@
 			"CDataAsset.cpp.obj",
 			"CDataAssetFactory.cpp.obj",
 			"CDataAssetToolAction.cpp.obj",
-			"CExampleComponent.cpp.obj",
 			"CEditorDetailPaneel.cpp.obj",
-			"Example.cpp.obj"
+			"Example.cpp.obj",
+			"CExampleComponent.cpp.obj"
 		],
 		"Module.Example.gen.cpp.obj": [
 			"CDataAsset.gen.cpp.obj",

@@ -56,10 +56,6 @@ void ACAttachment::OffCollision()
 		component->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 }
 
-
-
-
-
 void ACAttachment::AttachTo(FName InSocketName)
 {
 	AttachToComponent

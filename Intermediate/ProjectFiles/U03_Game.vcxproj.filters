@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\U03_Game.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{5E3FF234-260E-43A1-BD03-ED1840BAE3D2}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\U03_Game.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\U03_GameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
+    <None Include="..\..\README.md" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{05341E75-4B3D-46A9-9233-2599A56D40F6}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DT_Enemy.CSV">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DT_Player.CSV">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{195F838B-8A38-4EF6-B530-20596865BCBF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Example">
+      <UniqueIdentifier>{690901F6-1216-436E-9C91-E3DAE9B82ABA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Example\Source">
+      <UniqueIdentifier>{809C5CE8-CE35-4A8B-846B-3F9E6644EFF8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Example\Source\Example">
+      <UniqueIdentifier>{83CB29D7-892C-4EB6-9619-1554ED4099C3}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\Example\Source\Example\Example.Build.cs">
+      <Filter>Plugins\Example\Source\Example</Filter>
+    </None>
+    <Filter Include="Plugins\Example\Source\Example\01_DebugCategory">
+      <UniqueIdentifier>{E61B9E23-6AA4-4ABA-8938-CD6FE63DD0F1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\01_DebugCategory\CGameplayDebugCategory.cpp">
+      <Filter>Plugins\Example\Source\Example\01_DebugCategory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\01_DebugCategory\CGameplayDebugCategory.h">
+      <Filter>Plugins\Example\Source\Example\01_DebugCategory</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Example\Source\Example\02_ToolbarCommand">
+      <UniqueIdentifier>{3135B0C3-57E5-4F86-B7A9-0D5869A44A32}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\02_ToolbarCommand\CToolbarCommand.cpp">
+      <Filter>Plugins\Example\Source\Example\02_ToolbarCommand</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\02_ToolbarCommand\CToolbarCommand.h">
+      <Filter>Plugins\Example\Source\Example\02_ToolbarCommand</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Example\Source\Example\03_CutomDataAsset">
+      <UniqueIdentifier>{F553F37B-5F23-4854-82E3-2C14C7D55DA5}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\03_CutomDataAsset\CDataAsset.cpp">
+      <Filter>Plugins\Example\Source\Example\03_CutomDataAsset</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\03_CutomDataAsset\CDataAsset.h">
+      <Filter>Plugins\Example\Source\Example\03_CutomDataAsset</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\03_CutomDataAsset\CDataAssetFactory.cpp">
+      <Filter>Plugins\Example\Source\Example\03_CutomDataAsset</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\03_CutomDataAsset\CDataAssetFactory.h">
+      <Filter>Plugins\Example\Source\Example\03_CutomDataAsset</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\03_CutomDataAsset\CDataAssetToolAction.cpp">
+      <Filter>Plugins\Example\Source\Example\03_CutomDataAsset</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\03_CutomDataAsset\CDataAssetToolAction.h">
+      <Filter>Plugins\Example\Source\Example\03_CutomDataAsset</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Example\Source\Example\04_EditorDetailPanel">
+      <UniqueIdentifier>{1B2955DF-08A5-4834-B973-78BF93262356}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\04_EditorDetailPanel\CEditorDetailPaneel.cpp">
+      <Filter>Plugins\Example\Source\Example\04_EditorDetailPanel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\04_EditorDetailPanel\CEditorDetailPaneel.h">
+      <Filter>Plugins\Example\Source\Example\04_EditorDetailPanel</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Example\Source\Example\Private">
+      <UniqueIdentifier>{B4F35469-389A-466F-BBBC-55CF63524F73}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\Private\Example.cpp">
+      <Filter>Plugins\Example\Source\Example\Private</Filter>
+    </ClCompile>
+    <Filter Include="Plugins\Example\Source\Example\Public">
+      <UniqueIdentifier>{9BD3DB2E-6B31-4E3C-99FC-409A1828E693}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\Public\Example.h">
+      <Filter>Plugins\Example\Source\Example\Public</Filter>
+    </ClInclude>
+    <Filter Include="Plugins\Example\Source\Example\Test_Components">
+      <UniqueIdentifier>{CA66144D-1833-4479-9305-0DE254710DB9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Plugins\Example\Source\Example\Test_Components\CExampleComponent.cpp">
+      <Filter>Plugins\Example\Source\Example\Test_Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Plugins\Example\Source\Example\Test_Components\CExampleComponent.h">
+      <Filter>Plugins\Example\Source\Example\Test_Components</Filter>
+    </ClInclude>
+    <None Include="..\..\Plugins\Example\Example.uplugin">
+      <Filter>Plugins\Example</Filter>
+    </None>
+    <Filter Include="Plugins\Example\Resources">
+      <UniqueIdentifier>{4E55CCCD-0B86-4C29-AF4E-FD8015A865EA}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Plugins\Example\Resources\Icon128.png">
+      <Filter>Plugins\Example\Resources</Filter>
+    </None>
+    <Filter Include="Source\U03_Game">
+      <UniqueIdentifier>{8A2E8837-19D5-428E-86F6-426A1345DE56}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\CGameMode.cpp">
+      <Filter>Source\U03_Game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\CGameMode.h">
+      <Filter>Source\U03_Game</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\CHUD.cpp">
+      <Filter>Source\U03_Game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\CHUD.h">
+      <Filter>Source\U03_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\U03_Game\Global.h">
+      <Filter>Source\U03_Game</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\U03_Game\U03_Game.Build.cs">
+      <Filter>Source\U03_Game</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\U03_Game\U03_Game.cpp">
+      <Filter>Source\U03_Game</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\U03_Game.h">
+      <Filter>Source\U03_Game</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\Actions">
+      <UniqueIdentifier>{B1DB62F4-1E47-4433-9C63-8CE48A01659D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CAction.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CAction.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CActionData.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CActionData.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CAim.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CAim.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CAttachMent.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CAttachMent.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CDoAction.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CDoAction.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CDoAction_Melee.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CDoAction_Melee.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CDoAction_Throw.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CDoAction_Throw.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CDoAction_Tornado.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CDoAction_Tornado.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CDoAction_Warp.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CDoAction_Warp.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CEquipment.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CEquipment.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Actions\CThrow.cpp">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Actions\CThrow.h">
+      <Filter>Source\U03_Game\Actions</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\BehaviorTree">
+      <UniqueIdentifier>{94859888-F3CC-4053-BDB2-FA51EAECF82B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\BehaviorTree\CBTService_Melee.cpp">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\BehaviorTree\CBTService_Melee.h">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\BehaviorTree\CBTService_Wizard.cpp">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\BehaviorTree\CBTService_Wizard.h">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Action.cpp">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Action.h">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Change.cpp">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Change.h">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Patrol.cpp">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Patrol.h">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Speed.cpp">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\BehaviorTree\CBTTaskNode_Speed.h">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\BehaviorTree\CEnvQueryContext_Player.cpp">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\BehaviorTree\CEnvQueryContext_Player.h">
+      <Filter>Source\U03_Game\BehaviorTree</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\Characters">
+      <UniqueIdentifier>{87181FEA-3397-4D00-913F-843408954BD3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\Characters\CAIController.cpp">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Characters\CAIController.h">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Characters\CAnimInstance.cpp">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Characters\CAnimInstance.h">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Characters\CEnemy.cpp">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Characters\CEnemy.h">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Characters\CEnemy_AI.cpp">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Characters\CEnemy_AI.h">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Characters\CPlayer.cpp">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Characters\CPlayer.h">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Characters\ICharacter.cpp">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Characters\ICharacter.h">
+      <Filter>Source\U03_Game\Characters</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\Components">
+      <UniqueIdentifier>{F9C82F85-F362-4169-835C-6E6AE4429DBD}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CActionComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CActionComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CBehaviorComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CBehaviorComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CFeetComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CFeetComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CMontagesComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CMontagesComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\COptionComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\COptionComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CPatrolComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CPatrolComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CStateComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CStateComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Components\CStatusComponent.cpp">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Components\CStatusComponent.h">
+      <Filter>Source\U03_Game\Components</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\Notifies">
+      <UniqueIdentifier>{AD6D9C76-50B4-4382-9A35-2E9D292236D6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Collision.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Collision.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Combo.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Combo.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Dead.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Dead.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Equip.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotifyState_Equip.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotify_BackStepped.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotify_BackStepped.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotify_BeginAction.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotify_BeginAction.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotify_Dead.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotify_Dead.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotify_EndAction.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotify_EndAction.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotify_Hitted.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotify_Hitted.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Notifies\CAnimNotify_Rolled.cpp">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Notifies\CAnimNotify_Rolled.h">
+      <Filter>Source\U03_Game\Notifies</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\Objects">
+      <UniqueIdentifier>{9C40B169-01E7-4761-97F5-119AC13950EE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CButtonActor.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CButtonActor.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CCameraSpline.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CCameraSpline.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CFileActor.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CFileActor.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CFollowCamera.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CFollowCamera.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CInteractDoor.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CInteractDoor.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CLerpDoor.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CLerpDoor.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CPatrolPath.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CPatrolPath.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CReadActor.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CReadActor.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CSetViewTarget.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CSetViewTarget.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CSliceMesh.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CSliceMesh.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Objects\CVertexActor.cpp">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Objects\CVertexActor.h">
+      <Filter>Source\U03_Game\Objects</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\Utilities">
+      <UniqueIdentifier>{2A7FD9AF-D107-4C81-AB97-B61AD0D36569}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\U03_Game\Utilities\CHelpers.h">
+      <Filter>Source\U03_Game\Utilities</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Utilities\CLog.cpp">
+      <Filter>Source\U03_Game\Utilities</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Utilities\CLog.h">
+      <Filter>Source\U03_Game\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\U03_Game\Utilities\Defines.h">
+      <Filter>Source\U03_Game\Utilities</Filter>
+    </ClInclude>
+    <Filter Include="Source\U03_Game\Widgets">
+      <UniqueIdentifier>{3CD0557D-279C-4AB5-B95D-5CAC5E4B5D2A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\U03_Game\Widgets\CUserWidget_Health.cpp">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Widgets\CUserWidget_Health.h">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Widgets\CUserWidget_Name.cpp">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Widgets\CUserWidget_Name.h">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Widgets\CUserWidget_Select.cpp">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Widgets\CUserWidget_Select.h">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\U03_Game\Widgets\CUserWidget_SelectItem.cpp">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\U03_Game\Widgets\CUserWidget_SelectItem.h">
+      <Filter>Source\U03_Game\Widgets</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

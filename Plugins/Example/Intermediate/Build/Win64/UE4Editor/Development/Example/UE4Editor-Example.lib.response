@@ -6,11 +6,9 @@
 /NAME:"UE4Editor-Example.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"D:\U03_CPP\Intermediate\Build\Win64\U03_GameEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\CEditorDetailPaneel.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Example.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.gen.cpp.obj"
-"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Default.rc2.res"
-/OUT:"D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example.lib"
+"E:\U03_Game\Intermediate\Build\Win64\U03_GameEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"E:\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.cpp.obj"
+"E:\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Module.Example.gen.cpp.obj"
+"E:\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\Default.rc2.res"
+/OUT:"E:\U03_Game\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Development\Example\UE4Editor-Example.lib"
 /INCLUDE:IMPLEMENT_MODULE_Example

@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define EXAMPLE_CDataAsset_generated_h
 
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_SPARSE_DATA
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS_NO_PURE_DECLS
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS_NO_PURE_DECLS \
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_SPARSE_DATA
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS_NO_PURE_DECLS
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCDataAsset(); \
 	friend struct Z_Construct_UClass_UCDataAsset_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(UCDataAsset)
 
 
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS \
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS \
 private: \
 	static void StaticRegisterNativesUCDataAsset(); \
 	friend struct Z_Construct_UClass_UCDataAsset_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(UCDataAsset)
 
 
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_STANDARD_CONSTRUCTORS \
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCDataAsset(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCDataAsset) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_ENHANCED_CONSTRUCTORS \
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UCDataAsset(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,32 +60,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UCDataAsset); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UCDataAsset)
 
 
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_PRIVATE_PROPERTY_OFFSET \
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Name() { return STRUCT_OFFSET(UCDataAsset, Name); } \
 	FORCEINLINE static uint32 __PPO__Value() { return STRUCT_OFFSET(UCDataAsset, Value); }
 
 
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_7_PROLOG
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_GENERATED_BODY_LEGACY \
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_7_PROLOG
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_PRIVATE_PROPERTY_OFFSET \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_SPARSE_DATA \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_STANDARD_CONSTRUCTORS \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_PRIVATE_PROPERTY_OFFSET \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_SPARSE_DATA \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_GENERATED_BODY \
+#define U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_PRIVATE_PROPERTY_OFFSET \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_SPARSE_DATA \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS_NO_PURE_DECLS \
-	U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_ENHANCED_CONSTRUCTORS \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_PRIVATE_PROPERTY_OFFSET \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_SPARSE_DATA \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_RPC_WRAPPERS_NO_PURE_DECLS \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_INCLASS_NO_PURE_DECLS \
+	U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h_10_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -93,7 +93,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> EXAMPLE_API UClass* StaticClass<class UCDataAsset>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID U03_CPP_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h
+#define CURRENT_FILE_ID U03_Game_Plugins_Example_Source_Example_03_CutomDataAsset_CDataAsset_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

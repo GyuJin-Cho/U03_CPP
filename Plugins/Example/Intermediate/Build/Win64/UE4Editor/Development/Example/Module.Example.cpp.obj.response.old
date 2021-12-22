@@ -231,6 +231,12 @@
 /I Runtime\Experimental\GeometryCollectionSimulationCore\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
+/I D:\U03_CPP\Intermediate\Build\Win64\UE4Editor\Inc\U03_Game
+/I D:\U03_CPP\Source
+/I D:\U03_CPP\Source\U03_Game
+/I ..\Plugins\Runtime\ProceduralMeshComponent\Intermediate\Build\Win64\UE4Editor\Inc\ProceduralMeshComponent
+/I ..\Plugins\Runtime\ProceduralMeshComponent\Source
+/I ..\Plugins\Runtime\ProceduralMeshComponent\Source\ProceduralMeshComponent\Public
 /I D:\U03_CPP\Plugins\Example\Intermediate\Build\Win64\UE4Editor\Inc\Example
 /I D:\U03_CPP\Plugins\Example\Source
 /I D:\U03_CPP\Plugins\Example\Source\Example

@@ -4,5 +4,4 @@
 #include "D:/U03_CPP/Plugins/Example/Source/Example/03_CutomDataAsset/CDataAsset.cpp"
 #include "D:/U03_CPP/Plugins/Example/Source/Example/03_CutomDataAsset/CDataAssetFactory.cpp"
 #include "D:/U03_CPP/Plugins/Example/Source/Example/03_CutomDataAsset/CDataAssetToolAction.cpp"
-#include "D:/U03_CPP/Plugins/Example/Source/Example/04_EditorDetailPanel/CEditorDetailPaneel.cpp"
 #include "D:/U03_CPP/Plugins/Example/Source/Example/Test_Components/CExampleComponent.cpp"
